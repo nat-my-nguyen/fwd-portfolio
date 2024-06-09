@@ -1,33 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes, Link, NavLink } from 'react-router-dom'
+import Home from './templates/Home'
+import Projects from './templates/Projects'
+import Project from './templates/Project'
+import About from './templates/About'
+import Contact from './templates/Contact'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header id="masthead" className="site-header">
+        <div className="site-branding">
+          {/* logo svg goes here*/}
+        </div>
+        <nav className="site-navigation">
+          <ul>
+            <li><NavLink to='/' end>Home</NavLink></li>
+            <li><NavLink to='/projects'>Projects</NavLink></li>
+            <li><NavLink to='/about'>About</NavLink></li>
+            <li><NavLink to='/contact'>Contact</NavLink></li>
+          </ul>
+        </nav>
+      </header>
+      <main id="main">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/projects/:slug' element={<Project />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/services' element={<Contact />} />
+        </Routes>
+      </main>
+      <footer>
+        <nav className="site-navigation">
+          <ul>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/projects'>Projects</Link></li>
+            <li><Link to='/about'>About</Link></li>
+            <li><Link to='/contact'>Contact</Link></li>
+          </ul>
+        </nav>
+        <div className="social-links">
+          <ul>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+          </ul>
+        </div>
+        <p className="copyright">Created for <a href="https://wp.bcitwebdeveloper.ca/" target="_blank" rel="noopener noreferrer">FWDP 3600</a>.</p>
+      </footer>
     </>
   )
 }
