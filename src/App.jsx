@@ -4,6 +4,7 @@ import Projects from './templates/Projects'
 import Project from './templates/Project'
 import About from './templates/About'
 import Contact from './templates/Contact'
+import './styles/styles.scss'
 
 function App() {
 
