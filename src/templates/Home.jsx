@@ -6,17 +6,16 @@ import FeaturedProjects from '../sections/Home-featured';
 import HomeSkills from '../sections/Home-skills';
 
 const Home = () => {
-    const [heroData, setHeroData] = useState(null)
+    const [homeData, setHomeData] = useState(null)
     const [projectsData, setProjectsData] = useState(null)
-    const [skillsData, setSkillsData] = useState(null)
     const [isLoaded, setLoadStatus] = useState(false)
 
     useEffect(() => {
-        const fetchHeroData = async () => {
+        const fetchHomeData = async () => {
             const response = await fetch(restBase + 'pages/8');
             if ( response.ok ) {
                 const data = await response.json();
-                setHeroData(data);
+                setHomeData(data);
             }
         }
 
@@ -28,16 +27,8 @@ const Home = () => {
             }
         }
 
-        const fetchSkillsData = async () => {
-            const response = await fetch(restBase + 'pages/8');
-            if ( response.ok ) {
-                const data = await response.json();
-                setSkillsData(data);
-            }
-        }
-
         const fetchData = async () => {
-            await Promise.all( [ fetchHeroData(), fetchProjectsData(), fetchSkillsData() ] );
+            await Promise.all( [ fetchHomeData(), fetchProjectsData() ] );
             setLoadStatus(true);
         }
 
@@ -50,9 +41,9 @@ const Home = () => {
 
     return (
         <>
-            <HomeHero data={heroData}/>
+            <HomeHero data={homeData}/>
             <FeaturedProjects data={projectsData}/>
-            <HomeSkills data={skillsData}/>
+            <HomeSkills data={homeData}/>
         </>            
     )
 }
