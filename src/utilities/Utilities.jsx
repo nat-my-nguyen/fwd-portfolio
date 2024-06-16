@@ -35,6 +35,7 @@ export const progToolsLabels = {
     "vscode": "VS Code",
     "github": "GitHub",
     "wordpress": "WordPress",
+    "asana": "Asana",
     "trello": "Trello"
 };
   
