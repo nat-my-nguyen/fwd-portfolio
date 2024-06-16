@@ -10,7 +10,7 @@ const ProjectsList = ( { projects } ) => {
     return (
         <>
             {projects.map(post => (
-                <article key={post.id} id={`post-${post.id}`} className="featured-item">
+                <article key={post.id} id={`post-${post.id}`} className="project-item">
                     {post.featured_media !== 0 && post._embedded &&
                         <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
                     }

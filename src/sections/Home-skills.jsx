@@ -2,7 +2,7 @@ import {
     getLabels,
     techStackLabels,
     progToolsLabels, } from '../utilities/Utilities'
-import { Link } from "react-router-dom"
+import CTAAboutContact from '../components/CTA-about-contact'
 
 const HomeSkills = ( {data } ) => {
     return (
@@ -26,11 +26,7 @@ const HomeSkills = ( {data } ) => {
                 ))}
             </div>
 
-            <div className="call-to-action">
-                <h3>Find out more about me:</h3>
-                <Link to="/about" className="link-btn">Read About Me</Link>
-                <Link to="/contact" className="link-btn"> Let's Connect</Link>
-            </div>
+            <CTAAboutContact />
         </section>
     )
 }

@@ -7,7 +7,7 @@ import HomeSkills from '../sections/Home-skills'
 
 const Home = () => {
     const [homeData, setHomeData] = useState(null)
-    const [projectsData, setProjectsData] = useState(null)
+    const [postsData, setPostsData] = useState(null)
     const [isLoaded, setLoadStatus] = useState(false)
 
     useEffect(() => {
@@ -19,16 +19,16 @@ const Home = () => {
             }
         }
 
-        const fetchProjectsData = async () => {
+        const fetchPostsData = async () => {
             const response = await fetch(restBase + 'posts?_embed');
             if ( response.ok ) {
                 const data = await response.json();
-                setProjectsData(data);
+                setPostsData(data);
             }
         }
 
         const fetchData = async () => {
-            await Promise.all( [ fetchHomeData(), fetchProjectsData() ] );
+            await Promise.all( [ fetchHomeData(), fetchPostsData() ] );
             setLoadStatus(true);
         }
 
@@ -42,7 +42,7 @@ const Home = () => {
     return (
         <>
             <HomeHero data={homeData}/>
-            <FeaturedProjects data={projectsData}/>
+            <FeaturedProjects data={postsData}/>
             <HomeSkills data={homeData}/>
         </>            
     )
