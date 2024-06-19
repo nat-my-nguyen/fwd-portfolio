@@ -47,7 +47,7 @@ export const etcSkillsLabels = {
     "watering": "Watering Plants :)"
 };
 
-/* Function to map arrays of values to better outputs*/
+/*Function to map arrays of values to better outputs*/
 export const getLabels = (items, labelsMap) => items.map(item => labelsMap[item] || item);
 
 export const collaborationLabels = {
@@ -57,3 +57,12 @@ export const collaborationLabels = {
     "team-4": "Team of 4",
     "team-5": "Team of 5"
 };
+
+/*Function to convert WP's \r\n and \n to proper paragraph tags*/
+export const convertToParagraphs = (text) => {
+    return text
+        .split(/\r?\n|\n/)
+        .filter(paragraph => paragraph.trim() !== '')
+        .map(paragraph => `<p>${paragraph.trim()}</p>`)
+        .join('')
+}
