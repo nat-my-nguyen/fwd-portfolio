@@ -33,7 +33,7 @@ const ProjectsList = ( { projects } ) => {
                             <span className="txt-header">Collaboration: </span>
                             {collaborationLabels[post.acf.collaboration]}
                         </p>
-                        <Link to={`/blog/${post.slug}`} className="link-btn">More Details</Link>
+                        <Link to={`/projects/${post.slug}`} className="link-btn">More Details</Link>
                     </div>
                 </article>
             ))}
