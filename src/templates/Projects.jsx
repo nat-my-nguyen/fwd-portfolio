@@ -11,23 +11,23 @@ const Projects = () => {
 
     useEffect(() => {
         const fetchProjectsData = async () => {
-            const response = await fetch(restBase + 'pages/11');
+            const response = await fetch(restBase + 'pages/11')
             if ( response.ok ) {
-                const data = await response.json();
+                const data = await response.json()
                 setProjectsData(data);
             }
         }
 
         const fetchPostsData = async () => {
-            const response = await fetch(restBase + 'posts?_embed');
+            const response = await fetch(restBase + 'posts?_embed')
             if ( response.ok ) {
-                const data = await response.json();
+                const data = await response.json()
                 setPostsData(data);
             }
         }
 
         const fetchData = async () => {
-            await Promise.all( [ fetchProjectsData(), fetchPostsData() ] );
+            await Promise.all( [ fetchProjectsData(), fetchPostsData() ] )
             setLoadStatus(true);
         }
 
@@ -35,7 +35,7 @@ const Projects = () => {
     }, [])
 
     if ( !isLoaded ) {
-        return <Loading />;
+        return <Loading />
     }
 
     return (

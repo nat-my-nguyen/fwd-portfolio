@@ -12,31 +12,31 @@ const Home = () => {
 
     useEffect(() => {
         const fetchHomeData = async () => {
-            const response = await fetch(restBase + 'pages/8');
+            const response = await fetch(restBase + 'pages/8')
             if ( response.ok ) {
-                const data = await response.json();
-                setHomeData(data);
+                const data = await response.json()
+                setHomeData(data)
             }
         }
 
         const fetchPostsData = async () => {
-            const response = await fetch(restBase + 'posts?_embed');
+            const response = await fetch(restBase + 'posts?_embed')
             if ( response.ok ) {
-                const data = await response.json();
-                setPostsData(data);
+                const data = await response.json()
+                setPostsData(data)
             }
         }
 
         const fetchData = async () => {
-            await Promise.all( [ fetchHomeData(), fetchPostsData() ] );
-            setLoadStatus(true);
+            await Promise.all( [ fetchHomeData(), fetchPostsData() ] )
+            setLoadStatus(true)
         }
 
         fetchData();
     }, [])
 
     if ( !isLoaded ) {
-        return <Loading />;
+        return <Loading />
     }
 
     return (

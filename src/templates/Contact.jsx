@@ -9,20 +9,20 @@ const Contact = () => {
     const [isLoaded, setLoadStatus] = useState(false)
 
     const fetchContactData = async () => {
-        const response = await fetch(restBase + 'pages/15');
+        const response = await fetch(restBase + 'pages/15')
         if ( response.ok ) {
             const data = await response.json();
-            setContactData(data);
-            setLoadStatus(true);
+            setContactData(data)
+            setLoadStatus(true)
         }
     }
 
     useEffect(() => {
-        fetchContactData();
+        fetchContactData()
     }, [])
 
     if ( !isLoaded ) {
-        return <Loading />;
+        return <Loading />
     }
 
     return (
