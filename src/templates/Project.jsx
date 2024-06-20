@@ -8,6 +8,8 @@ import {
     convertToParagraphs } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
 import { useParams } from 'react-router-dom'
+import { Accordion, AccordionItem } from '@szhsin/react-accordion'
+import chevronDown from '../assets/chevron-down.svg'
 import CarouselSlide from '../components/Carousel-slide'
 import SkillsList from '../components/Skills-list'
 import NextProjectLink from '../components/Next-project-link'
@@ -92,16 +94,24 @@ const Project = () => {
 
                     <a href={projectData.acf.live_link}>Visit Live</a>
 
-                    <div className="accordion-area">
-                        <button className="accordion">{projectData.acf.accordion.header_insights}</button>
-                        <div className="panel" dangerouslySetInnerHTML={{__html: convertToParagraphs(projectData.acf.accordion.content_insights)}}></div>
+                    <Accordion allowMultiple transition transitionTimeout={400}>
+                        <AccordionItem 
+                            header={
+                                <>
+                                {projectData.acf.accordion.header_insights}
+                                <img className="chevron-down" src={chevronDown} alt="Chevron Down" />
+                                </>} initialEntered>
+                            <div dangerouslySetInnerHTML={{__html: convertToParagraphs(projectData.acf.accordion.content_insights)}}></div>
+                        </AccordionItem>
 
-                        <button className="accordion">{projectData.acf.accordion.header_features}</button>
-                        <div className="panel" dangerouslySetInnerHTML={{__html: projectData.acf.accordion.content_features}}></div>
+                        <AccordionItem header={projectData.acf.accordion.header_features}>
+                            <div dangerouslySetInnerHTML={{__html: projectData.acf.accordion.content_features}}></div>
+                        </AccordionItem>
 
-                        <button className="accordion">{projectData.acf.accordion.header_hurdles}</button>
-                        <div className="panel" dangerouslySetInnerHTML={{__html: projectData.acf.accordion.content_hurdles}}></div>
-                    </div>
+                        <AccordionItem header={projectData.acf.accordion.header_hurdles}>
+                            <div dangerouslySetInnerHTML={{__html: projectData.acf.accordion.content_hurdles}}></div>
+                        </AccordionItem>
+                    </Accordion>
 
                     <div className="cta">
                         <NextProjectLink projectsList={projectsList} />
