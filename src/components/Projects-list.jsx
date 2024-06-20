@@ -15,24 +15,21 @@ const ProjectsList = ( { projects } ) => {
                         <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
                     }
                     <div className="project-content">
-                        <h3>{post.title.rendered}</h3>
-                        <h4 className="subtitle">{post.acf.subtitle}</h4>
-                        <p className="proj-overview">
-                            <span className="txt-header">Project Overview: </span>
-                            {post.acf.overview}
-                        </p>
-                        <p className="proj-stacks">
-                            <span className="txt-header">Tech Stack: </span>
-                            {getLabels(post.acf.tech_stack, techStackLabels).join(', ')}
-                        </p>
-                        <p className="proj-stacks">
-                            <span className="txt-header">Programs & Tools: </span>
-                            {getLabels(post.acf.prog_tools, progToolsLabels).join(', ')}
-                        </p>
-                        <p className="proj-collaboration">
-                            <span className="txt-header">Collaboration: </span>
-                            {collaborationLabels[post.acf.collaboration]}
-                        </p>
+                        <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h2>
+                        <h3 className="subtitle">{post.acf.subtitle}</h3>
+
+                        <h3 className="txt-header">Project Overview:</h3>
+                        <p className="proj-overview">{post.acf.overview}</p>
+
+                        <h3 className="txt-header">Collaboration:</h3>
+                        <p className="proj-collaboration">{collaborationLabels[post.acf.collaboration]}</p>
+
+                        <h3 className="txt-header">Tech Stack:</h3>
+                        <p className="proj-stacks">{getLabels(post.acf.tech_stack, techStackLabels).join(', ')}</p>
+
+                        <h3 className="txt-header">Programs & Tools:</h3>
+                        <p className="proj-stacks">{getLabels(post.acf.prog_tools, progToolsLabels).join(', ')}</p>
+                        
                         <Link to={`/projects/${post.slug}`} className="link-btn">More Details</Link>
                     </div>
                 </article>

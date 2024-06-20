@@ -14,20 +14,20 @@ const About = () => {
     const [isLoaded, setLoadStatus] = useState(false)
 
     const fetchAboutData = async () => {
-        const response = await fetch(restBase + 'pages/13');
+        const response = await fetch(restBase + 'pages/13')
         if ( response.ok ) {
-            const data = await response.json();
-            setAboutData(data);
-            setLoadStatus(true);
+            const data = await response.json()
+            setAboutData(data)
+            setLoadStatus(true)
         }
     }
 
     useEffect(() => {
-        fetchAboutData();
+        fetchAboutData()
     }, [])
 
     if ( !isLoaded ) {
-        return <Loading />;
+        return <Loading />
     }
 
     return (
@@ -35,7 +35,6 @@ const About = () => {
             <h1 dangerouslySetInnerHTML={{__html:aboutData.title.rendered}}></h1>
             <section dangerouslySetInnerHTML={{__html:aboutData.content.rendered}}></section>
             <section className="skills-section" id={`post-${aboutData.id}`}>
-                <h2>My Skills</h2>
                 <SkillsList
                     title="Tech Stack"
                     skills={getLabels(aboutData.acf.tech_stack, techStackLabels)}
