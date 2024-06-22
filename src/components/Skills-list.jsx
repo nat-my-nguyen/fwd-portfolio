@@ -1,4 +1,5 @@
 import React from 'react'
+import { displayDevicon } from '../utilities/Utilities'
 
 const SkillsList = ( { title, skills } ) => (
     <>
@@ -7,6 +8,7 @@ const SkillsList = ( { title, skills } ) => (
             {skills.map((tool, index) => (
                 <div key={index} className="stack-card">
                     <p>{tool}</p>
+                    {displayDevicon(tool)}
                 </div>
             ))}
         </div>
