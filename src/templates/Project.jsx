@@ -15,6 +15,14 @@ import SkillsList from '../components/Skills-list'
 import NextProjectLink from '../components/Next-project-link'
 import CTAProjectContact from '../components/CTA-project-contact'
 
+/*Handles accordion headers in the Project*/
+const AccordionHeader = ({ text }) => (
+    <>
+        {text}
+        <img className="chevron-down" src={chevronDown} alt="Chevron Down" />
+    </>
+)
+
 const Project = () => {
     const { slug } = useParams()
     const [projectData, setProjectData] = useState(null)
@@ -62,6 +70,10 @@ const Project = () => {
         fetchData()
     }, [slug])
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [slug])
+
     if (!isLoaded) {
         return <Loading/>
     }
@@ -97,18 +109,25 @@ const Project = () => {
                     <Accordion allowMultiple transition transitionTimeout={400}>
                         <AccordionItem 
                             header={
-                                <>
-                                {projectData.acf.accordion.header_insights}
-                                <img className="chevron-down" src={chevronDown} alt="Chevron Down" />
-                                </>} initialEntered>
+                                <AccordionHeader 
+                                text={projectData.acf.accordion.header_insights}
+                                />} initialEntered>
                             <div dangerouslySetInnerHTML={{__html: convertToParagraphs(projectData.acf.accordion.content_insights)}}></div>
                         </AccordionItem>
 
-                        <AccordionItem header={projectData.acf.accordion.header_features}>
+                        <AccordionItem 
+                            header={
+                                <AccordionHeader 
+                                text={projectData.acf.accordion.header_features}
+                                /> }>
                             <div dangerouslySetInnerHTML={{__html: projectData.acf.accordion.content_features}}></div>
                         </AccordionItem>
 
-                        <AccordionItem header={projectData.acf.accordion.header_hurdles}>
+                        <AccordionItem 
+                            header={
+                                <AccordionHeader 
+                                text={projectData.acf.accordion.header_hurdles}
+                                /> }>
                             <div dangerouslySetInnerHTML={{__html: projectData.acf.accordion.content_hurdles}}></div>
                         </AccordionItem>
                     </Accordion>

@@ -1,8 +1,5 @@
-// body {
-//     background-color: aquamarine;
-// }
-@use 'accordion';
+//Base Styling
+@use 'normalize';
 
-.szh-accordion__item-content {
-    transition: height 0.4s linear;
-}
+//Library Styling
+@use 'accordion';

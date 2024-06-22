@@ -24,12 +24,12 @@ export const techStackLabels = {
     "sass": "Sass",
     "gulp": "Gulp",
     "react": "React",
-    "vite": "Vite"
+    "vitejs": "ViteJS"
 };
   
 export const progToolsLabels = {
     "figma": "Figma",
-    "adobe-xd": "Adobe XD",
+    "xd": "Adobe XD",
     "photoshop": "Photoshop",
     "illustrator": "Illustrator",
     "vscode": "VS Code",
