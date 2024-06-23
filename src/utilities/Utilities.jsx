@@ -91,7 +91,7 @@ const availableIcons = [
 ]
 
 /*Remap the labels to proper values that Devicon recognizes
-* Doing this because of Adobe XD...
+* Doing this because of Adobe XD... otherwise I'd use toLowerCase().replace(' 'g, '')
 */
 const deviconNameMap = {
     "HTML5": "html5",

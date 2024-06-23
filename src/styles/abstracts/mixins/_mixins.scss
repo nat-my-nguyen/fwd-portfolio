@@ -1,0 +1,12 @@
+// Responsive headings resizing
+@mixin responsive-heading($small, $medium, $large) {
+	font-size: $small;
+
+	@media screen and (min-width: $mq_breakpoint_medium) {
+		font-size: $medium;
+	}
+
+	@media screen and (min-width: $mq_breakpoint_large) {
+		font-size: $large;
+	}
+}

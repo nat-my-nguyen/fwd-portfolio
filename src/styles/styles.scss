@@ -1,5 +1,11 @@
-//Base Styling
-@use 'normalize';
+//Generic
+@import "generic/normalize";
+@import "generic/box-sizing";
 
-//Library Styling
-@use 'accordion';
+//Base Styling
+@import "abstracts/abstracts";
+@import "base/base";
+@import "layout/layout";
+
+//Components/Library
+@import "components/accordion";
