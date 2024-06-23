@@ -1,9 +1,4 @@
-import { 
-    featuredImage,
-    getLabels,
-    techStackLabels,
-    progToolsLabels,
-    collaborationLabels } from '../utilities/Utilities'
+import { featuredImage } from '../utilities/Utilities'
 import { Link } from 'react-router-dom'
 
 const ProjectsList = ( { projects } ) => {
@@ -22,13 +17,17 @@ const ProjectsList = ( { projects } ) => {
                         <p className="proj-overview">{post.acf.overview}</p>
 
                         <h3 className="txt-header">Collaboration:</h3>
-                        <p className="proj-collaboration">{collaborationLabels[post.acf.collaboration]}</p>
+                        <p className="proj-collaboration">{post.acf.collaboration.label}</p>
 
                         <h3 className="txt-header">Tech Stack:</h3>
-                        <p className="proj-stacks">{getLabels(post.acf.tech_stack, techStackLabels).join(', ')}</p>
+                        <p className="proj-stacks">
+                            {post.acf.tech_skills.map(skill => skill.label).join(', ')}
+                        </p>
 
                         <h3 className="txt-header">Programs & Tools:</h3>
-                        <p className="proj-stacks">{getLabels(post.acf.prog_tools, progToolsLabels).join(', ')}</p>
+                        <p className="proj-stacks">
+                            {post.acf.prog_skills.map(skill => skill.label).join(', ')}
+                        </p>
                         
                         <Link to={`/projects/${post.slug}`} className="link-btn">More Details</Link>
                     </div>

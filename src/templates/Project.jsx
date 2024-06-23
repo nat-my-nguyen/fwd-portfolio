@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react'
 import { 
     restBase,
-    getLabels,
-    techStackLabels,
-    progToolsLabels,
-    collaborationLabels,
     convertToParagraphs } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
 import { useParams } from 'react-router-dom'
@@ -32,7 +28,7 @@ const Project = () => {
 
     useEffect(() => {
         const fetchProjectData = async () => {
-            const response = await fetch(`${restBase}posts?slug=${slug}&_embed`)
+            const response = await fetch(`${restBase}posts?slug=${slug}&acf_format=standard&_embed`)
             if ( response.ok ) {
                 const data = await response.json()
                 const project = data[0]
@@ -46,8 +42,9 @@ const Project = () => {
         }
 
         /*Take an  array of image IDs from the WP media, fetch each data, then returns image object*/
-        const fetchImageData = async (ids) => {
-            const getIDs = ids.map(id => fetch(`${restBase}media/${id}`))
+        const fetchImageData = async (carousel) => {
+            // const getIDs = ids.map(id => fetch(`${restBase}media/${id}`))
+            const getIDs = carousel.map(item => fetch(`${restBase}media/${item.id}`))
             const responses = await Promise.all(getIDs)
             const images = await Promise.all(responses.map(response => response.json()))
             return images
@@ -55,7 +52,7 @@ const Project = () => {
 
         /*Fetches all project posts, this is for the NextProjectLink*/
         const fetchProjectsList = async () => {
-            const response = await fetch(`${restBase}posts?_embed`)
+            const response = await fetch(`${restBase}posts?acf_format=standard&_embed`)
             if (response.ok) {
                 const data = await response.json()
                 setProjectsList(data)
@@ -92,15 +89,15 @@ const Project = () => {
 
                     <section>
                         <h2 className="txt-header">Collaboration:</h2>
-                        <p className="proj-collaboration">{collaborationLabels[projectData.acf.collaboration]}</p>
+                        <p className="proj-collaboration">{projectData.acf.collaboration.label}</p>
 
                         <SkillsList
                             title="Tech Stack:"
-                            skills={getLabels(projectData.acf.tech_stack, techStackLabels)}
+                            skills={projectData.acf.tech_skills}
                         />
                         <SkillsList
                             title="Programs & Tools:"
-                            skills={getLabels(projectData.acf.prog_tools, progToolsLabels)}
+                            skills={projectData.acf.prog_skills}
                         />
                     </section>
 

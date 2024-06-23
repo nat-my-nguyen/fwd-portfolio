@@ -5,14 +5,14 @@ const SkillsList = ( { title, skills } ) => (
     <>
         <h2 className="txt-header">{title}</h2>
         <div className="stack-container">
-            {skills.map((tool, index) => (
+            {skills.map((skill, index) => (
                 <div key={index} className="stack-card">
-                    <p>{tool}</p>
-                    {displayDevicon(tool)}
+                    <p>{skill.label}</p>
+                    {displayDevicon(skill.value)}
                 </div>
             ))}
         </div>
     </>
-);
+)
 
 export default SkillsList

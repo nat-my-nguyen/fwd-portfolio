@@ -19,7 +19,7 @@ const Projects = () => {
         }
 
         const fetchPostsData = async () => {
-            const response = await fetch(restBase + 'posts?_embed')
+            const response = await fetch(restBase + 'posts?acf_format=standard&_embed')
             if ( response.ok ) {
                 const data = await response.json()
                 setPostsData(data);

@@ -112,12 +112,17 @@ const deviconNameMap = {
     "Trello": "trello"
 }
 
+const notAvailableDeviconList = [
+    "asana"
+]
+
 /*Check if there is an associated icon to display, if not return none*/
-export const displayDevicon = (label) => {
-    const deviconName = deviconNameMap[label]
-    if ( deviconName && availableIcons.includes(deviconName) ) {
-        const iconClass = `devicon-${deviconName}-plain`
-        return <i className={iconClass} key={label}></i>
+export const displayDevicon = (value) => {
+    if (notAvailableDeviconList.includes(value)) {
+        return null
     }
-    return null
+    // const deviconName = value.toLowerCase().replace(/\s+/g, '')
+    const iconClass = `devicon-${value}-plain`
+    return <i className={iconClass} key={value}></i>
 }
+
