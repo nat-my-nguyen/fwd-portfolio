@@ -1,6 +1,9 @@
 body {
 	color: $color_dark;
 	font-family: $font_main;
-	font-size: 1rem;
 	line-height: $font_line-height;
+}
+
+p {
+	@include responsive-text(.875rem, 1rem);
 }

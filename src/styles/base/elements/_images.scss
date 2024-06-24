@@ -1,0 +1,4 @@
+.featured-image img,
+.carousel-image img {
+    @include stylish-border($color_accent);
+}

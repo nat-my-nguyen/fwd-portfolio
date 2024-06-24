@@ -4,6 +4,7 @@ import Projects from './templates/Projects'
 import Project from './templates/Project'
 import About from './templates/About'
 import Contact from './templates/Contact'
+import Logo from './components/Logo'
 import './styles/styles.scss'
 
 function App() {
@@ -11,9 +12,7 @@ function App() {
   return (
     <>
       <header id="masthead" className="site-header">
-        <div className="site-branding">
-          {/* logo svg goes here*/}
-        </div>
+        <Logo />
         <nav className="site-navigation">
           <ul>
             <li><NavLink to='/' end>Home</NavLink></li>
@@ -33,19 +32,11 @@ function App() {
         </Routes>
       </main>
       <footer>
-        <nav className="site-navigation">
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/projects'>Projects</Link></li>
-            <li><Link to='/about'>About</Link></li>
-            <li><Link to='/contact'>Contact</Link></li>
-          </ul>
-        </nav>
         <div className="social-links">
           <ul>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
+            <li><Link to='/contact'>Contact</Link></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
           </ul>
         </div>
         <p className="copyright">Created for <a href="https://wp.bcitwebdeveloper.ca/" target="_blank" rel="noopener noreferrer">FWDP 3600</a>.</p>

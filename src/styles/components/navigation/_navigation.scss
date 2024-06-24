@@ -1,0 +1,23 @@
+.site-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    background-color: $color_secondary;
+}
+
+.site-navigation {
+    width: 100%;
+    
+    ul {
+        margin: 0 1.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    li {
+        
+    }
+}

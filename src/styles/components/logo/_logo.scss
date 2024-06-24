@@ -1,0 +1,27 @@
+.logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo img {
+    // margin: .5rem;
+    // width: 2.5rem;
+    position: absolute;
+    opacity: 1;
+    transition: opacity .5s ease;
+}
+
+.logo img.hover-logo,
+.logo img.active-logo,
+.logo:hover img.default-logo,
+.logo:active img.default-logo {
+    opacity: 0;
+}
+
+.logo:hover img.hover-logo,
+.logo:active img.active-logo {
+    opacity: 1;
+}

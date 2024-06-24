@@ -10,3 +10,16 @@
 		font-size: $large;
 	}
 }
+
+@mixin responsive-text($small, $medium) {
+	font-size: $small;
+
+	@media screen and (min-width: $mq_breakpoint_medium) {
+		font-size: $medium;
+	}
+}
+
+@mixin stylish-border($border-color) {
+	border: .1875rem solid $border-color;
+	border-radius: 0 1.5rem 0 1.5rem;
+}
