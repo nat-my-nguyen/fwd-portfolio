@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
-import { 
-    restBase,
-    convertToParagraphs } from '../utilities/Utilities'
+import { restBase, convertToParagraphs } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
 import { useParams } from 'react-router-dom'
 import { Accordion, AccordionItem } from '@szhsin/react-accordion'

@@ -14,7 +14,7 @@ const Projects = () => {
             const response = await fetch(restBase + 'pages/11')
             if ( response.ok ) {
                 const data = await response.json()
-                setProjectsData(data);
+                setProjectsData(data)
             }
         }
 
@@ -22,13 +22,13 @@ const Projects = () => {
             const response = await fetch(restBase + 'posts?acf_format=standard&_embed')
             if ( response.ok ) {
                 const data = await response.json()
-                setPostsData(data);
+                setPostsData(data)
             }
         }
 
         const fetchData = async () => {
             await Promise.all( [ fetchProjectsData(), fetchPostsData() ] )
-            setLoadStatus(true);
+            setLoadStatus(true)
         }
 
         fetchData();

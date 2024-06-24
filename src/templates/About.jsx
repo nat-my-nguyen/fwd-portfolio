@@ -1,10 +1,5 @@
 import { useState, useEffect } from 'react'
-import { 
-    restBase,
-    getLabels,
-    techStackLabels,
-    progToolsLabels,
-    etcSkillsLabels } from '../utilities/Utilities'
+import { restBase } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
 import { Link } from 'react-router-dom'
 import SkillsList from '../components/Skills-list'

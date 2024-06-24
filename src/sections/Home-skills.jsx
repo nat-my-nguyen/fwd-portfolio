@@ -1,7 +1,3 @@
-import {    
-    getLabels,
-    techStackLabels,
-    progToolsLabels, } from '../utilities/Utilities'
 import SkillsList from '../components/Skills-list'
 import CTAAboutContact from '../components/CTA-about-contact'
 
