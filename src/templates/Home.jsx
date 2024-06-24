@@ -12,7 +12,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchHomeData = async () => {
-            const response = await fetch(restBase + 'pages/8')
+            const response = await fetch(restBase + 'pages/8?acf_format=standard&_embed')
             if ( response.ok ) {
                 const data = await response.json()
                 setHomeData(data)
@@ -20,7 +20,7 @@ const Home = () => {
         }
 
         const fetchPostsData = async () => {
-            const response = await fetch(restBase + 'posts?_embed')
+            const response = await fetch(restBase + 'posts?acf_format=standard&_embed')
             if ( response.ok ) {
                 const data = await response.json()
                 setPostsData(data)

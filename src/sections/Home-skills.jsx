@@ -11,11 +11,11 @@ const HomeSkills = ( {data } ) => {
             <h2>My Skills</h2>
             <SkillsList
                 title="Tech Stack"
-                skills={getLabels(data.acf.tech_stack, techStackLabels)}
+                skills={data.acf.tech_skills}
             />
             <SkillsList
                 title="Programs & Tools"
-                skills={getLabels(data.acf.prog_tools, progToolsLabels)}
+                skills={data.acf.prog_skills}
             />
 
             <CTAAboutContact />
