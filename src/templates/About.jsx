@@ -14,7 +14,7 @@ const About = () => {
     const [isLoaded, setLoadStatus] = useState(false)
 
     const fetchAboutData = async () => {
-        const response = await fetch(restBase + 'pages/13')
+        const response = await fetch(restBase + 'pages/13?acf_format=standard&_embed')
         if ( response.ok ) {
             const data = await response.json()
             setAboutData(data)
@@ -37,16 +37,20 @@ const About = () => {
             <section className="skills-section" id={`post-${aboutData.id}`}>
                 <SkillsList
                     title="Tech Stack"
-                    skills={getLabels(aboutData.acf.tech_stack, techStackLabels)}
+                    skills={aboutData.acf.tech_skills}
                 />
                 <SkillsList
                     title="Programs & Tools"
-                    skills={getLabels(aboutData.acf.prog_tools, progToolsLabels)}
+                    skills={aboutData.acf.prog_skills}
                 />
-                <SkillsList
-                    title="Etc Skills"
-                    skills={getLabels(aboutData.acf.etc_skills, etcSkillsLabels)}
-                />
+                <h2 className="txt-header">Etc Skills</h2>
+                <div className="stack-container">
+                    {aboutData.acf.etc_skills.map((skill, index) => (
+                        <div key={index} className="stack-card">
+                            <p>{skill.label}</p>
+                        </div>
+                    ))}
+                </div>
             </section>
             <div className="call-to-action">
                 <Link to="/projects" className="link-btn">Back to Projects</Link>
