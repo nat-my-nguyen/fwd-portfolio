@@ -1,27 +1,52 @@
 .logo {
-    width: 2.5rem;
-    height: 2.5rem;
+    padding: .25rem;
     position: fixed;
     top: 0;
-    left: 0;
+    width: 100%;
+    background-color: $color_secondary;
 }
 
-.logo img {
-    // margin: .5rem;
-    // width: 2.5rem;
+.logo a,
+.site-logo,
+.site-logo:before,
+.site-logo:after {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.logo a {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+
+.site-logo,
+.site-logo:before,
+.site-logo:after {
+    display: inline-block;
+}
+
+.site-logo:before {
+    content: url('/src/assets/portfolio-logo-dark.svg');
+    transition: opacity .6s ease;
+    -webkit-transition: opacity .6s ease;
+}
+
+.site-logo:after{
+    border-radius: 50%;
+    background-color: $color_accent;
+    content: url('/src/assets/portfolio-logo-light.svg');
     position: absolute;
-    opacity: 1;
-    transition: opacity .5s ease;
-}
-
-.logo img.hover-logo,
-.logo img.active-logo,
-.logo:hover img.default-logo,
-.logo:active img.default-logo {
+    left: 0;
     opacity: 0;
+    transition: opacity .6s ease;
+    -webkit-transition: opacity .6s ease;
 }
 
-.logo:hover img.hover-logo,
-.logo:active img.active-logo {
+.site-logo:hover:after {
     opacity: 1;
+}
+
+.site-logo:hover:before {
+    opacity: 0;
 }
