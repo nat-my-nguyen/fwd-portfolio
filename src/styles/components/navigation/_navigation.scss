@@ -8,21 +8,28 @@
 }
 
 .site-navigation {
+    padding: .625rem 0;
     position: fixed;
     bottom: 0;
     z-index: 500;
     width: 100%;
-    height: 2.5rem;
     background-color: $color_secondary;
     
     ul {
-        margin: 0 1.5rem;
+        margin: 0 auto;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        max-width: 300px;
     }
+}
 
-    li {
-        
-    }
+.nav-icon img {
+    margin: 0 auto;
+    display: block;
+    width: 1.75rem;
+}
+
+.nav-icon:hover img {
+    @include icon-hover-effect(50%, $color_accent);
 }

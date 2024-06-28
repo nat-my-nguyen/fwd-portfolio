@@ -23,3 +23,9 @@
 	border: .1875rem solid $border-color;
 	border-radius: 0 1.5rem 0 1.5rem;
 }
+
+@mixin icon-hover-effect($border-rad, $bg-color) {
+	border-radius: $border-rad;
+	background-color: $bg-color;
+	transition: background-color .6s;
+}

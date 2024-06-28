@@ -1,0 +1,45 @@
+a,
+nav a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+a {
+    color: $color_link-main;
+
+    &:hover {
+        color: $color_link-hover;
+        text-decoration: underline;
+        font-style: italic;
+    }
+
+    &:visited:not(a.link-btn, nav a) {
+        color: $color_link-visited;
+    }
+
+    &:active {
+        color: $color_link-active;
+    }
+}
+
+a.link-btn,
+.site-navigation a {
+    text-transform: uppercase;
+}
+
+nav a {
+    color: $color_navlink-main;
+
+    &:hover {
+        color: $color_navlink-hover;
+    }
+
+    &:active {
+        color: $color_navlink-active;
+    }
+}
+
+.site-navigation a {
+    display: block;
+    font-size: .75rem;
+}

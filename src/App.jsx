@@ -15,14 +15,35 @@ function App() {
         <Logo />
         <nav className="site-navigation">
           <ul>
-            <li><NavLink to='/' end>Home</NavLink></li>
-            <li><NavLink to='/projects'>Projects</NavLink></li>
-            <li><NavLink to='/about'>About</NavLink></li>
-            <li><NavLink to='/contact'>Contact</NavLink></li>
+            <li>
+              <NavLink to='/' className="nav-icon" end>
+                <img src="/src/assets/icon-home.svg" alt="Home Icon" />
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/projects' className="nav-icon">
+                <img src="/src/assets/icon-projects.svg" alt="Projects Icon" />
+                Projects
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/about' className="nav-icon">
+                <img src="/src/assets/icon-about.svg" alt="About Icon" />
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/contact' className="nav-icon">
+                <img src="/src/assets/icon-contact.svg" alt="Contact Icon" />
+                Contact
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </header>
       <main id="main">
+        <a>Link test look for styling</a>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/projects' element={<Projects />} />

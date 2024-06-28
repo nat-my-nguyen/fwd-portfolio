@@ -4,10 +4,11 @@ $color_accent: #EAD0FB; //rgb(234,208,251)
 $color_dark: #151A1D; //rgb(21,26,29)
 $color_light: #FFFFFF; //rgb(255,255,255)
 
-// $color__text-screen: #21759b;
-// $color__text-input: #666;
-// $color__text-input-focus: #111;
-// $color__link: #1d4425; //dark green
-// $color__link-visited: #532d5d; //aubergine
-// $color__link-hover: #D87093; //palevioletred
-// $color__text-main: #404040;
+$color_link-main: $color_secondary;
+$color_link-hover: #3F4E9D;
+$color_link-visited: #49265A; 
+$color_link-active: $color_accent;
+
+$color_navlink-main: $color_light;
+$color_navlink-hover: $color_primary;
+$color_navlink-active: $color_accent;
