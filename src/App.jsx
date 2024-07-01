@@ -43,7 +43,6 @@ function App() {
         </nav>
       </header>
       <main id="main">
-        <a>Link test look for styling</a>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/projects' element={<Projects />} />

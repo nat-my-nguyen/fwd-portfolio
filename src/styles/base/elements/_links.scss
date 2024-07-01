@@ -10,7 +10,6 @@ a {
     &:hover {
         color: $color_link-hover;
         text-decoration: underline;
-        font-style: italic;
     }
 
     &:visited:not(a.link-btn, nav a) {
@@ -41,5 +40,10 @@ nav a {
 
 .site-navigation a {
     display: block;
-    font-size: .75rem;
+    font-size: .625rem;
+    font-weight: 500;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
