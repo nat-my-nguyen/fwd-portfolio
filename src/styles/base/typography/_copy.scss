@@ -1,9 +1,13 @@
+@use "../../abstracts/mixins/mixins" as mixins;
+@use "../../abstracts/variables/colors" as colors;
+@use "../../abstracts/variables/typography" as typography;
+
 body {
-	color: $color_dark;
-	font-family: $font_main;
-	line-height: $font_line-height;
+	color: colors.$color_dark;
+	font-family: typography.$font_main;
+	line-height: typography.$font_line-height;
 }
 
 p {
-	@include responsive-text(.875rem, 1rem);
+	@include mixins.responsive-text(.875rem, 1rem);
 }

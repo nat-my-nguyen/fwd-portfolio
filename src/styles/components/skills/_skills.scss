@@ -1,7 +1,10 @@
+@use "../../abstracts/mixins/mixins" as mixins;
+@use "../../abstracts/variables/colors" as colors;
+
 .skills-section {
     
 }
 
 .stack-card {
-    // @include stylish-border($color_secondary)
+    // @include mixins.stylish-border(colors.$color_secondary)
 }

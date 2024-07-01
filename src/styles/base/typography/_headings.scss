@@ -1,20 +1,23 @@
+@use "../../abstracts/mixins/mixins" as mixins;
+@use "../../abstracts/variables/typography" as typography;
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	font-family: $font_heading; 
+	font-family: typography.$font_heading; 
 }
 
 h1 {
-	@include responsive-heading(1.875rem, 2.25rem, 2.5rem);
+	@include mixins.responsive-heading(1.875rem, 2.25rem, 2.5rem);
 }
 
 h2 {
-	@include responsive-heading(1.5rem, 1.625rem, 1.875rem);
+	@include mixins.responsive-heading(1.5rem, 1.625rem, 1.875rem);
 }
 
 h3 {
-	@include responsive-heading(1.25rem, 1.375rem, 1.5rem);
+	@include mixins.responsive-heading(1.25rem, 1.375rem, 1.5rem);
 }

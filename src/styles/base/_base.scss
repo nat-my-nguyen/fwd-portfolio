@@ -1,13 +1,13 @@
 //Elements
-@import "elements/body";
-@import "elements/buttons";
-@import "elements/images";
-@import "elements/links";
-@import "elements/lists";
-@import "elements/main";
-@import "elements/media";
-@import "elements/footer";
+@use "elements/body";
+@use "elements/buttons";
+@use "elements/images";
+@use "elements/links";
+@use "elements/lists";
+@use "elements/main";
+@use "elements/media";
+@use "elements/footer";
 
 //Typography
-@import "typography/copy";
-@import "typography/headings";
+@use "typography/copy";
+@use "typography/headings";

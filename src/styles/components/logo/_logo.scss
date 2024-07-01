@@ -1,9 +1,11 @@
+@use "../../abstracts/variables/colors" as colors;
+
 .logo {
     padding: .25rem;
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: $color_secondary;
+    background-color: colors.$color_secondary;
 }
 
 .logo a,
@@ -34,7 +36,7 @@
 
 .site-logo:after{
     border-radius: 50%;
-    background-color: $color_accent;
+    background-color: colors.$color_accent;
     content: url('/src/assets/portfolio-logo-light.svg');
     position: absolute;
     left: 0;

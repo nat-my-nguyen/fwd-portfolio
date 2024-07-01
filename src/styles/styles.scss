@@ -1,10 +1,10 @@
 //Generic
-@import "generic/normalize";
-@import "generic/box-sizing";
+@use "generic/normalize";
+@use "generic/box-sizing";
 
 //Base Styling
-@import "abstracts/abstracts";
-@import "base/base";
+@use "abstracts/abstracts";
+@use "base/base";
 
 //Components/Library
-@import "components/components";
+@use "components/components";

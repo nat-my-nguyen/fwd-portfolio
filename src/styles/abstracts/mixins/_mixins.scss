@@ -1,12 +1,14 @@
+@use "../../abstracts/variables/breakpoints" as breakpoints;
+
 // Responsive headings resizing
 @mixin responsive-heading($small, $medium, $large) {
 	font-size: $small;
 
-	@media screen and (min-width: $mq_breakpoint_medium) {
+	@media screen and (min-width: breakpoints.$mq_breakpoint_medium) {
 		font-size: $medium;
 	}
 
-	@media screen and (min-width: $mq_breakpoint_large) {
+	@media screen and (min-width: breakpoints.$mq_breakpoint_large) {
 		font-size: $large;
 	}
 }
@@ -14,7 +16,7 @@
 @mixin responsive-text($small, $medium) {
 	font-size: $small;
 
-	@media screen and (min-width: $mq_breakpoint_medium) {
+	@media screen and (min-width: breakpoints.$mq_breakpoint_medium) {
 		font-size: $medium;
 	}
 }

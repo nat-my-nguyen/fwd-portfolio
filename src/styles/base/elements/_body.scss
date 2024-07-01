@@ -1,5 +1,7 @@
+@use "../../abstracts/variables/colors";
+
 body {
-    background-color: $color_primary;
+    background-color: colors.$color_primary;
     min-height: 100vh;
     position: relative;
 }

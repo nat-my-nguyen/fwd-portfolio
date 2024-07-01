@@ -1,3 +1,5 @@
+@use "../../abstracts/variables/colors" as colors;
+
 a,
 nav a {
     text-decoration: none;
@@ -5,19 +7,19 @@ nav a {
 }
 
 a {
-    color: $color_link-main;
+    color: colors.$color_link-main;
 
     &:hover {
-        color: $color_link-hover;
+        color: colors.$color_link-hover;
         text-decoration: underline;
     }
 
     &:visited:not(a.link-btn, nav a) {
-        color: $color_link-visited;
+        color: colors.$color_link-visited;
     }
 
     &:active {
-        color: $color_link-active;
+        color: colors.$color_link-active;
     }
 }
 
@@ -27,14 +29,14 @@ a.link-btn,
 }
 
 nav a {
-    color: $color_navlink-main;
+    color: colors.$color_navlink-main;
 
     &:hover {
-        color: $color_navlink-hover;
+        color: colors.$color_navlink-hover;
     }
 
     &:active {
-        color: $color_navlink-active;
+        color: colors.$color_navlink-active;
     }
 }
 

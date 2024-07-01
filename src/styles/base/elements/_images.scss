@@ -1,4 +1,7 @@
+@use "../../abstracts/mixins/mixins" as mixins;
+@use "../../abstracts/variables/colors" as colors;
+
 .featured-image img,
 .carousel-image img {
-    @include stylish-border($color_accent);
+    @include mixins.stylish-border(colors.$color_accent);
 }

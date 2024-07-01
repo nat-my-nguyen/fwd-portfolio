@@ -1,3 +1,6 @@
+@use "../../abstracts/mixins/mixins" as mixins;
+@use "../../abstracts/variables/colors" as colors;
+
 .site-header {
     display: flex;
     justify-content: center;
@@ -13,7 +16,7 @@
     bottom: 0;
     z-index: 500;
     width: 100%;
-    background-color: $color_secondary;
+    background-color: colors.$color_secondary;
     
     ul {
         margin: 0 auto;
@@ -31,5 +34,5 @@
 }
 
 .nav-icon:hover img {
-    @include icon-hover-effect(50%, $color_accent);
+    @include mixins.icon-hover-effect(50%, colors.$color_accent);
 }
