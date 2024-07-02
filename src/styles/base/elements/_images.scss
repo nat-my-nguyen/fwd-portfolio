@@ -5,3 +5,7 @@
 .carousel-image img {
     @include mixins.stylish-border(colors.$color_accent);
 }
+
+.projects-page .featured-image img {
+    @include mixins.stylish-border(colors.$color_secondary);
+}

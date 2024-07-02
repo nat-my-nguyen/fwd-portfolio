@@ -4,14 +4,16 @@
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-	font-family: typography.$font_heading; 
+h4 {
+	font-family: typography.$font_heading;
+	text-transform: uppercase;
 }
 
-h1 {
+h1,
+.projects-container h2:not(.project-item h2),
+.skills-section h2:first-of-type {
 	@include mixins.responsive-heading(1.875rem, 2.25rem, 2.5rem);
+	@include mixins.responsive-heading-align;
 }
 
 h2 {
@@ -20,4 +22,8 @@ h2 {
 
 h3 {
 	@include mixins.responsive-heading(1.25rem, 1.375rem, 1.5rem);
+}
+
+.txt-header {
+	text-decoration: underline;
 }

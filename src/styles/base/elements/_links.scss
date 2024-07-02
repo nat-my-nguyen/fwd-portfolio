@@ -1,7 +1,8 @@
 @use "../../abstracts/variables/colors" as colors;
 
 a,
-nav a {
+nav a,
+a.link-btn {
     text-decoration: none;
     font-weight: 700;
 }
@@ -9,7 +10,7 @@ nav a {
 a {
     color: colors.$color_link-main;
 
-    &:hover {
+    &:hover:not(a.link-btn) {
         color: colors.$color_link-hover;
         text-decoration: underline;
     }
@@ -21,11 +22,6 @@ a {
     &:active {
         color: colors.$color_link-active;
     }
-}
-
-a.link-btn,
-.site-navigation a {
-    text-transform: uppercase;
 }
 
 nav a {
@@ -44,8 +40,17 @@ nav a {
     display: block;
     font-size: .625rem;
     font-weight: 500;
+    text-transform: uppercase;
 
     &:hover {
         text-decoration: none;
     }
+}
+
+a img {
+    display: block;
+}
+
+.link-btn {
+    display: inline-block;
 }

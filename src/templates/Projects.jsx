@@ -41,9 +41,9 @@ const Projects = () => {
     return (
         <>
             <h1 dangerouslySetInnerHTML={{__html:projectsData.title.rendered}}></h1>
-            <section className="projects-container">
+            <div dangerouslySetInnerHTML={{ __html: projectsData.content.rendered }}></div>
+            <section className="projects-container projects-page">
                 <h2>Projects</h2>
-                <div dangerouslySetInnerHTML={{ __html: projectsData.content.rendered }}></div>
                 <ProjectsList projects={postsData} />
                 <CTAAboutContact />
             </section>

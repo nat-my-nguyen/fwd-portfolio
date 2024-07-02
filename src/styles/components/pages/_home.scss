@@ -1,0 +1,53 @@
+@use "../../abstracts/mixins/mixins" as mixins;
+@use "../../abstracts/variables/colors" as colors;
+
+.home-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        margin: 10rem 0 2rem;
+        color: colors.$color_secondary;
+    }
+
+    p.hero-quote {
+        margin-bottom: 10rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    img.down-arrow {
+        position: absolute;
+        transform: translateY(50%);
+        width: 2.5rem;
+    }
+
+    .hero-intro {
+        padding: 10rem 1.25rem 2.5rem;;
+    }
+}
+
+.projects-container h2:not(.project-item h2),
+.skills-section h2:first-of-type {
+    text-align: center;
+}
+
+.featured-section {
+    background-color: colors.$color_secondary;
+    color: colors.$color_primary;
+
+    h2:not(.project-item h2),
+    article.project-item:not(:last-of-type) {
+        @include mixins.stylish-border-bottom(colors.$color_accent);
+    }
+
+    .project-item h2,
+    p {
+        color: colors.$color_light;
+    }
+}
+

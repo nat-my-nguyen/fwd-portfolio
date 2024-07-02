@@ -1,6 +1,7 @@
 @use "../../abstracts/variables/breakpoints" as breakpoints;
+@use "../../abstracts/variables/colors" as colors;
 
-// Responsive headings resizing
+//Responsive headings and text resizing
 @mixin responsive-heading($small, $medium, $large) {
 	font-size: $small;
 
@@ -13,6 +14,14 @@
 	}
 }
 
+@mixin responsive-heading-align($breakpoint-align: breakpoints.$mq_breakpoint_large) {
+	text-align: center;
+
+	@media screen and (min-width: $breakpoint-align) {
+	  text-align: left;
+	}
+}
+
 @mixin responsive-text($small, $medium) {
 	font-size: $small;
 
@@ -21,13 +30,56 @@
 	}
 }
 
-@mixin stylish-border($border-color) {
-	border: .1875rem solid $border-color;
+//Adds rounded and pointed border stylings, for <img>
+@mixin stylish-border($border_color) {
+	border: .1875rem solid $border_color;
 	border-radius: 0 1.5rem 0 1.5rem;
 }
 
-@mixin icon-hover-effect($border-rad, $bg-color) {
-	border-radius: $border-rad;
-	background-color: $bg-color;
+//Adds border-bottom styling
+@mixin stylish-border-bottom($border_color) {
+	border-bottom: 0.125rem solid $border_color;
+}
+
+//Adds circle background to icons and logo
+@mixin icon-hover-effect($border_rad, $bg_color) {
+	border-radius: $border_rad;
+	background-color: $bg_color;
 	transition: background-color .6s;
+}
+
+//Adds button-like styling for <a> tags with an arrow
+@mixin stylish-btn-arrow($direction: null, $text_color_hover, $text_color_active, $bg_color) {
+	border: .125rem solid colors.$color_primary;
+	border-radius: 2.25rem;
+	padding: .75rem 1rem;
+	color: colors.$color_secondary;
+	background-color: colors.$color_light;
+
+	@if $direction == 'right' {
+		&:hover {
+			padding: .75rem 2rem .75rem 1rem;
+			background: url('/src/assets/arrow-right-solid-fontawesome.svg') 95% 50%/1rem no-repeat;
+		}
+	} @else if $direction == 'left' {
+		&:hover {
+			padding: .75rem 1rem .75rem 2rem;
+			background: url('/src/assets/arrow-left-solid-fontawesome.svg') 5% 50%/1rem no-repeat;
+		}
+	} @else {
+		&:hover {
+			color: $text_color_hover;
+			background-color: $bg_color;
+		}
+	}
+
+	&:hover {
+		color: $text_color_hover;
+		background-color: $bg_color;
+	}
+
+	&:active {
+		color: $text_color_active;
+		background-color: $bg_color;
+	}
 }

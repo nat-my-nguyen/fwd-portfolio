@@ -11,3 +11,8 @@ body {
 p {
 	@include mixins.responsive-text(.875rem, 1rem);
 }
+
+p.hero-quote {
+	font-family: typography.$font_heading;
+	font-size: 1.5rem;
+}

@@ -10,8 +10,13 @@
     width: 100%;
 }
 
+.site-branding {
+    border-bottom: 0.0625rem solid colors.$color_primary;
+}
+
 .site-navigation {
-    padding: .625rem 0;
+    border-top: 0.0625rem solid colors.$color_primary;
+    padding: .5rem 0;
     position: fixed;
     bottom: 0;
     z-index: 500;
@@ -29,8 +34,8 @@
 
 .nav-icon img {
     margin: 0 auto;
-    display: block;
-    width: 1.75rem;
+    // display: block;
+    width: 1.625rem;
 }
 
 .nav-icon:hover img {
