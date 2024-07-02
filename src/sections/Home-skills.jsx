@@ -3,7 +3,7 @@ import CTAAboutContact from '../components/CTA-about-contact'
 
 const HomeSkills = ( {data } ) => {
     return (
-        <section className="skills-section" id={`post-${data.id}`}>
+        <section className="skills-section">
             <h2>My Skills</h2>
             <SkillsList
                 title="Tech Stack"

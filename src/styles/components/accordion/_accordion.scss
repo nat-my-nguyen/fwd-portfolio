@@ -2,6 +2,7 @@
 * 
 * source: https://szhsin.github.io/react-accordion/docs/headless-ui/styles
 */
+@use "../../abstracts/variables/colors" as colors;
 
 .App {
     font-family: sans-serif;
@@ -14,6 +15,7 @@
 }
 
 .szh-accordion {
+    margin: 0 .5rem;
     border-bottom: 1px solid #ccc;
         &__item {
             border-top: 1px solid #ccc;
@@ -23,17 +25,14 @@
             display: flex;
             align-items: center;
             width: 100%;
-            margin: 0;
-            padding: 1rem;
-            font-size: 1rem;
-            font-weight: 400;
+            padding: 1rem 1.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
             text-align: left;
-            color: #007bff;
-            background-color: transparent;
+            text-transform: uppercase;
+            color: colors.$color_light;
+            background-color: colors.$color_secondary;
             border: none;
-            &:hover {
-                background-color: #f3f3f3;
-            }
         }
 
         &-content {
@@ -41,12 +40,13 @@
         }
 
         &-panel {
-            padding: 1rem;
+            padding: .5rem 2rem;
+            background-color: colors.$color_light;
         }
 
         &--expanded {
             .szh-accordion__item-btn {
-                background-color: #e7e7e7;
+                color: colors.$color_accent;
             }
             .chevron-down {
                 transform: rotate(180deg);

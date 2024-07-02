@@ -8,7 +8,9 @@ body {
 	line-height: typography.$font_line-height;
 }
 
-p {
+p,
+li {
+	margin: .75rem 0;
 	@include mixins.responsive-text(.875rem, 1rem);
 }
 

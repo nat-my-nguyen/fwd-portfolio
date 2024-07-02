@@ -1,11 +1,17 @@
 @use "../../abstracts/mixins/mixins" as mixins;
 @use "../../abstracts/variables/colors" as colors;
 
-.featured-image img,
-.carousel-image img {
+.featured-image img {
     @include mixins.stylish-border(colors.$color_accent);
 }
 
-.projects-page .featured-image img {
+.featured-image__next-preview img {
+    margin: .5rem auto 0;
+    width: 12.5rem;
+    height: auto;
+}
+
+.projects-page .featured-image img,
+.carousel-image img {
     @include mixins.stylish-border(colors.$color_secondary);
 }

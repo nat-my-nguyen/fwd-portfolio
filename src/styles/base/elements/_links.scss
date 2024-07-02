@@ -1,21 +1,21 @@
 @use "../../abstracts/variables/colors" as colors;
 
 a,
-nav a,
-a.link-btn {
+nav ul li a,
+[class^="link-btn"] {
     text-decoration: none;
     font-weight: 700;
 }
 
-a {
+a:not(.link-btn):not(.link-btn-dark):not(.link-btn-left):not(.link-btn-right):not(.site-navigation ul li a) {
     color: colors.$color_link-main;
 
-    &:hover:not(a.link-btn) {
+    &:hover {
         color: colors.$color_link-hover;
         text-decoration: underline;
     }
 
-    &:visited:not(a.link-btn, nav a) {
+    &:visited {
         color: colors.$color_link-visited;
     }
 
@@ -24,11 +24,20 @@ a {
     }
 }
 
-nav a {
+.site-navigation ul li a {
+    display: block;
+    font-size: .625rem;
+    font-weight: 500;
+    text-transform: uppercase;
     color: colors.$color_navlink-main;
 
     &:hover {
         color: colors.$color_navlink-hover;
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: colors.$color_navlink-main;
     }
 
     &:active {
@@ -36,21 +45,10 @@ nav a {
     }
 }
 
-.site-navigation a {
-    display: block;
-    font-size: .625rem;
-    font-weight: 500;
-    text-transform: uppercase;
-
-    &:hover {
-        text-decoration: none;
-    }
-}
-
 a img {
     display: block;
 }
 
-.link-btn {
+[class^="link-btn"] {
     display: inline-block;
 }

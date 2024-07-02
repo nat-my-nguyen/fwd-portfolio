@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
-import { Link } from 'react-router-dom'
 import SkillsList from '../components/Skills-list'
+import CTAProjectContact from '../components/CTA-project-contact'
 
 const About = () => {
     const [aboutData, setAboutData] = useState(null)
@@ -47,10 +47,7 @@ const About = () => {
                     ))}
                 </div>
             </section>
-            <div className="call-to-action">
-                <Link to="/projects" className="link-btn">Back to Projects</Link>
-                <Link to="/contact" className="link-btn"> Let's Connect</Link>
-            </div>
+            <CTAProjectContact />
         </>
     )
 }

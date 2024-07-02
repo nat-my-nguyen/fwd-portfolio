@@ -28,9 +28,9 @@ const ProjectsList = ( { projects } ) => {
                         <p className="proj-stacks">
                             {post.acf.prog_skills.map(skill => skill.label).join(', ')}
                         </p>
-                        
-                        <Link to={`/projects/${post.slug}`} className="link-btn">More Details</Link>
                     </div>
+                        
+                    <Link to={`/projects/${post.slug}`} className="link-btn-dark">More Details</Link>
                 </article>
             ))}
         </>

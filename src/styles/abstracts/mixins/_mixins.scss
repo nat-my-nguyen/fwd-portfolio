@@ -49,37 +49,39 @@
 }
 
 //Adds button-like styling for <a> tags with an arrow
-@mixin stylish-btn-arrow($direction: null, $text_color_hover, $text_color_active, $bg_color) {
+@mixin stylish-btn-arrow($direction: null, $text_color_hover, $text_color_active, $bg_color_hover, $bg_color_active) {
 	border: .125rem solid colors.$color_primary;
 	border-radius: 2.25rem;
 	padding: .75rem 1rem;
 	color: colors.$color_secondary;
 	background-color: colors.$color_light;
+	transition: padding .3s ease,
+				color .3s ease,
+				background-color .3s ease;
 
 	@if $direction == 'right' {
 		&:hover {
-			padding: .75rem 2rem .75rem 1rem;
-			background: url('/src/assets/arrow-right-solid-fontawesome.svg') 95% 50%/1rem no-repeat;
+			padding: .75rem 2.75rem .75rem 1rem;
+			background: url('/src/assets/arrow-right-solid-fontawesome.svg') 90% 50%/1.25rem no-repeat;
+			color: $text_color_hover;
+			background-color: $bg_color_hover;
 		}
 	} @else if $direction == 'left' {
 		&:hover {
-			padding: .75rem 1rem .75rem 2rem;
-			background: url('/src/assets/arrow-left-solid-fontawesome.svg') 5% 50%/1rem no-repeat;
+			padding: .75rem 1rem .75rem 2.75rem;
+			background: url('/src/assets/arrow-left-solid-fontawesome.svg') 10% 50%/1.25rem no-repeat;
+			color: $text_color_hover;
+			background-color: $bg_color_hover;
 		}
 	} @else {
 		&:hover {
 			color: $text_color_hover;
-			background-color: $bg_color;
+			background-color: $bg_color_hover;
 		}
-	}
-
-	&:hover {
-		color: $text_color_hover;
-		background-color: $bg_color;
 	}
 
 	&:active {
 		color: $text_color_active;
-		background-color: $bg_color;
+		background-color: $bg_color_active;
 	}
 }

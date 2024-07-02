@@ -2,7 +2,23 @@
 @use "../../abstracts/variables/colors" as colors;
 
 .link-btn {
-    // display: inline-block;
+    @include mixins.stylish-btn-arrow(null, colors.$color_light, colors.$color_accent, colors.$color_secondary, colors.$color_secondary);
 
-    @include mixins.stylish-btn-arrow(null, colors.$color_light, colors.$color_accent, colors.$color_secondary);
+    &-dark {
+        margin: 0 auto;
+
+        @include mixins.stylish-btn-arrow(null, colors.$color_secondary, colors.$color_secondary, colors.$color_primary, colors.$color_accent);
+    }
+
+    &-left {
+        @include mixins.stylish-btn-arrow(left, colors.$color_light, colors.$color_accent, colors.$color_secondary, colors.$color_secondary);
+    }
+
+    &-right {
+        @include mixins.stylish-btn-arrow(right, colors.$color_light, colors.$color_accent, colors.$color_secondary, colors.$color_secondary);
+    }
+}
+
+.next-link {
+
 }
