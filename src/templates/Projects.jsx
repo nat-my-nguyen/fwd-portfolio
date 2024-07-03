@@ -45,8 +45,8 @@ const Projects = () => {
             <section className="projects-container projects-page">
                 <h2>Projects</h2>
                 <ProjectsList projects={postsData} />
-                <CTAAboutContact />
             </section>
+            <CTAAboutContact />
         </>
     )
 }

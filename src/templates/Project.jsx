@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { restBase, convertToParagraphs } from '../utilities/Utilities'
+import { restBase } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
 import { useParams } from 'react-router-dom'
 import { Accordion, AccordionItem } from '@szhsin/react-accordion'
@@ -80,7 +80,7 @@ const Project = () => {
                 <div className="project-content">
                     <section>
                         <h2 className="txt-header">Project Requirement:</h2>
-                        <div dangerouslySetInnerHTML= {{__html: convertToParagraphs(projectData.acf.requirements)}}></div>
+                        <div dangerouslySetInnerHTML= {{__html: projectData.acf.requirements}}></div>
                     </section>
 
                     {carouselImages.length > 0 && <CarouselSlide images={carouselImages} />}
@@ -107,7 +107,7 @@ const Project = () => {
                                 <AccordionHeader 
                                 text={projectData.acf.accordion.header_insights}
                                 />} initialEntered>
-                            <div dangerouslySetInnerHTML={{__html: convertToParagraphs(projectData.acf.accordion.content_insights)}}></div>
+                            <div dangerouslySetInnerHTML={{__html: projectData.acf.accordion.content_insights}}></div>
                         </AccordionItem>
 
                         <AccordionItem 
@@ -127,7 +127,7 @@ const Project = () => {
                         </AccordionItem>
                     </Accordion>
 
-                    <div className="cta">
+                    <div className="cta-container">
                         <NextProjectLink projectsList={projectsList} />
                         <CTAProjectContact />
                     </div>

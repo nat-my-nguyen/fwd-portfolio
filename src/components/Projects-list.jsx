@@ -30,7 +30,7 @@ const ProjectsList = ( { projects } ) => {
                         </p>
                     </div>
                         
-                    <Link to={`/projects/${post.slug}`} className="link-btn-dark">More Details</Link>
+                    <Link to={`/projects/${post.slug}`} className="link-btn dark">More Details</Link>
                 </article>
             ))}
         </>

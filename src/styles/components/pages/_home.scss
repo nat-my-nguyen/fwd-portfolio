@@ -3,12 +3,15 @@
 
 .home-hero,
 .featured-section .project-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
 }
 
 .home-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     min-height: 100vh;
 
@@ -36,6 +39,8 @@
 }
 
 .featured-section {
+    margin: 4rem 0;
+    padding: 3rem 1.25rem;
     background-color: colors.$color_secondary;
     color: colors.$color_primary;
 
@@ -47,10 +52,6 @@
     .project-item h2,
     p {
         color: colors.$color_light;
-    }
-
-    .project-item {
-        padding: 1.5rem 0;
     }
 }
 

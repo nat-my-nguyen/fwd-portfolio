@@ -17,15 +17,6 @@ export const featuredImage = ( featuredImageObject ) => {
     return {__html: img}
 }
 
-/*Function to convert WP's \r\n and \n to proper paragraph tags*/
-export const convertToParagraphs = (text) => {
-    return text
-        .split(/\r?\n|\n/)
-        .filter(paragraph => paragraph.trim() !== '')
-        .map(paragraph => `<p>${paragraph.trim()}</p>`)
-        .join('')
-}
-
 /*Display Devicon icon to Tech Stack and Program labels based on available icons
 * Ex. as of June 2024, there is no Asana icon, yet...
 * Better to not render empty tags, so will have to update the map and name list

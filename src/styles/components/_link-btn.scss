@@ -1,10 +1,10 @@
-@use "../../abstracts/mixins/mixins" as mixins;
-@use "../../abstracts/variables/colors" as colors;
+@use "../abstracts/mixins/mixins" as mixins;
+@use "../abstracts/variables/colors" as colors;
 
 .link-btn {
     @include mixins.stylish-btn-arrow(null, colors.$color_light, colors.$color_accent, colors.$color_secondary, colors.$color_secondary);
 
-    &-dark {
+    &.dark {
         margin: 0 auto;
 
         @include mixins.stylish-btn-arrow(null, colors.$color_secondary, colors.$color_secondary, colors.$color_primary, colors.$color_accent);
