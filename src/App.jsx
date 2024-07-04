@@ -4,7 +4,8 @@ import Projects from './templates/Projects'
 import Project from './templates/Project'
 import About from './templates/About'
 import Contact from './templates/Contact'
-import Logo from './components/Logo'
+import Navigation from './templates/Navigation'
+import FooterContacts from './templates/Footer-contacts'
 import './styles/styles.scss'
 
 function App() {
@@ -12,35 +13,7 @@ function App() {
   return (
     <>
       <header id="masthead" className="site-header">
-        <Logo />
-        <nav className="site-navigation">
-          <ul>
-            <li>
-              <NavLink to='/' className="nav-icon" end>
-                <img src="/src/assets/icon-home.svg" alt="Home Icon" />
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/projects' className="nav-icon">
-                <img src="/src/assets/icon-projects.svg" alt="Projects Icon" />
-                Projects
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/about' className="nav-icon">
-                <img src="/src/assets/icon-about.svg" alt="About Icon" />
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/contact' className="nav-icon">
-                <img src="/src/assets/icon-contact.svg" alt="Contact Icon" />
-                Contact
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+        <Navigation />
       </header>
       <main id="main">
         <Routes>
@@ -52,14 +25,7 @@ function App() {
         </Routes>
       </main>
       <footer>
-        <div className="social-links">
-          <ul>
-            <li><Link to='/contact'>Contact</Link></li>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">LinkedIn</a></li>
-          </ul>
-        </div>
-        <p className="copyright">Created for <a href="https://wp.bcitwebdeveloper.ca/" target="_blank" rel="noopener noreferrer">FWDP 3600</a>.</p>
+        <FooterContacts />
       </footer>
     </>
   )
