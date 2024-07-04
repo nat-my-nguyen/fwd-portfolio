@@ -1,7 +1,7 @@
-@use "../../abstracts/variables/colors";
+@use "../../abstracts/variables/colors" as *;
 
 body {
-    background-color: colors.$color_primary;
+    background-color: $color_primary;
     min-height: 100vh;
     position: relative;
     scroll-behavior: smooth;

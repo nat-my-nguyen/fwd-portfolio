@@ -1,8 +1,8 @@
-@use "../../abstracts/mixins/mixins" as mixins;
-@use "../../abstracts/variables/colors" as colors;
+@use "../../abstracts/mixins/mixins" as *;
+@use "../../abstracts/variables/colors" as *;
 
 .featured-image img {
-    @include mixins.stylish-border(colors.$color_accent);
+    @include stylish-border($color_accent);
 }
 
 .featured-image__next-preview img {
@@ -13,5 +13,5 @@
 
 .projects-page .featured-image img,
 .carousel-image img {
-    @include mixins.stylish-border(colors.$color_secondary);
+    @include stylish-border($color_secondary);
 }

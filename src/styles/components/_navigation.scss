@@ -1,5 +1,5 @@
-@use "../abstracts/mixins/mixins" as mixins;
-@use "../abstracts/variables/colors" as colors;
+@use "../abstracts/mixins/mixins" as *;
+@use "../abstracts/variables/colors" as *;
 
 .site-header {
     display: flex;
@@ -11,17 +11,17 @@
 }
 
 .site-branding {
-    border-bottom: 0.0625rem solid colors.$color_primary;
+    border-bottom: 0.0625rem solid $color_primary;
 }
 
 .site-navigation {
-    border-top: 0.0625rem solid colors.$color_primary;
+    border-top: 0.0625rem solid $color_primary;
     padding: .25rem 0;
     position: fixed;
     bottom: 0;
     z-index: 500;
     width: 100%;
-    background-color: colors.$color_secondary;
+    background-color: $color_secondary;
     
     ul {
         margin: 0 auto;
@@ -38,5 +38,5 @@
 }
 
 .nav-icon:hover img {
-    @include mixins.icon-hover-effect(50%, colors.$color_accent);
+    @include icon-hover-effect(50%, $color_accent);
 }

@@ -1,11 +1,11 @@
-@use "../abstracts/variables/colors" as colors;
+@use "../abstracts/variables/colors" as *;
 
 .logo {
     padding: .375rem;
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: colors.$color_secondary;
+    background-color: $color_secondary;
 }
 
 .logo a,
@@ -36,7 +36,7 @@
 
 .site-logo:after{
     border-radius: 50%;
-    background-color: colors.$color_accent;
+    background-color: $color_accent;
     content: var(--logo-hover);
     position: absolute;
     left: 0;

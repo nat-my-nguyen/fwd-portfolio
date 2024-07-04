@@ -1,20 +1,20 @@
-@use "../../abstracts/variables/breakpoints" as breakpoints;
-@use "../../abstracts/variables/colors" as colors;
+@use "../../abstracts/variables/breakpoints" as *;
+@use "../../abstracts/variables/colors" as *;
 
 //Responsive headings and text resizing
 @mixin responsive-heading($small, $medium, $large) {
 	font-size: $small;
 
-	@media screen and (min-width: breakpoints.$mq_breakpoint_medium) {
+	@media screen and (min-width: $mq_breakpoint_medium) {
 		font-size: $medium;
 	}
 
-	@media screen and (min-width: breakpoints.$mq_breakpoint_large) {
+	@media screen and (min-width: $mq_breakpoint_large) {
 		font-size: $large;
 	}
 }
 
-@mixin responsive-heading-align($breakpoint-align: breakpoints.$mq_breakpoint_large) {
+@mixin responsive-heading-align($breakpoint-align: $mq_breakpoint_large) {
 	text-align: center;
 
 	@media screen and (min-width: $breakpoint-align) {
@@ -25,7 +25,7 @@
 @mixin responsive-text($small, $medium) {
 	font-size: $small;
 
-	@media screen and (min-width: breakpoints.$mq_breakpoint_medium) {
+	@media screen and (min-width: $mq_breakpoint_medium) {
 		font-size: $medium;
 	}
 }
@@ -50,11 +50,11 @@
 
 //Adds button-like styling for <a> tags with an arrow
 @mixin stylish-btn-arrow($direction: null, $text_color_hover, $text_color_active, $bg_color_hover, $bg_color_active) {
-	border: .125rem solid colors.$color_primary;
+	border: .125rem solid $color_primary;
 	border-radius: 2.25rem;
 	padding: .75rem 1rem;
-	color: colors.$color_secondary;
-	background-color: colors.$color_light;
+	color: $color_secondary;
+	background-color: $color_light;
 	transition: padding .3s ease,
 				color .3s ease,
 				background-color .3s ease;

@@ -1,4 +1,4 @@
-@use "../../abstracts/variables/colors" as colors;
+@use "../../abstracts/variables/colors" as *;
 
 a,
 nav ul li a,
@@ -8,19 +8,19 @@ nav ul li a,
 }
 
 a:not(.link-btn):not(.link-btn-dark):not(.link-btn-left):not(.link-btn-right):not(.site-navigation ul li a) {
-    color: colors.$color_link-main;
+    color: $color_link-main;
 
     &:hover {
-        color: colors.$color_link-hover;
+        color: $color_link-hover;
         text-decoration: underline;
     }
 
     &:visited {
-        color: colors.$color_link-visited;
+        color: $color_link-visited;
     }
 
     &:active {
-        color: colors.$color_link-active;
+        color: $color_link-active;
     }
 }
 
@@ -29,19 +29,19 @@ a:not(.link-btn):not(.link-btn-dark):not(.link-btn-left):not(.link-btn-right):no
     font-size: .625rem;
     font-weight: 500;
     text-transform: uppercase;
-    color: colors.$color_navlink-main;
+    color: $color_navlink-main;
 
     &:hover {
-        color: colors.$color_navlink-hover;
+        color: $color_navlink-hover;
         text-decoration: none;
     }
 
     &:visited {
-        color: colors.$color_navlink-main;
+        color: $color_navlink-main;
     }
 
     &:active {
-        color: colors.$color_navlink-active;
+        color: $color_navlink-active;
     }
 }
 

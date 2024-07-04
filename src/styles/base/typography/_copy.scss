@@ -1,20 +1,20 @@
-@use "../../abstracts/mixins/mixins" as mixins;
-@use "../../abstracts/variables/colors" as colors;
-@use "../../abstracts/variables/typography" as typography;
+@use "../../abstracts/mixins/mixins" as *;
+@use "../../abstracts/variables/colors" as *;
+@use "../../abstracts/variables/typography" as *;
 
 body {
-	color: colors.$color_dark;
-	font-family: typography.$font_main;
-	line-height: typography.$font_line-height;
+	color: $color_dark;
+	font-family: $font_main;
+	line-height: $font_line-height;
 }
 
 p,
 li {
 	margin: .75rem 0;
-	@include mixins.responsive-text(.875rem, 1rem);
+	@include responsive-text(.875rem, 1rem);
 }
 
 p.hero-quote {
-	font-family: typography.$font_heading;
+	font-family: $font_heading;
 	font-size: 1.5rem;
 }

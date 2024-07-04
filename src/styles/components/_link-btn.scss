@@ -1,21 +1,21 @@
-@use "../abstracts/mixins/mixins" as mixins;
-@use "../abstracts/variables/colors" as colors;
+@use "../abstracts/mixins/mixins" as *;
+@use "../abstracts/variables/colors" as *;
 
 .link-btn {
-    @include mixins.stylish-btn-arrow(null, colors.$color_light, colors.$color_accent, colors.$color_secondary, colors.$color_secondary);
+    @include stylish-btn-arrow(null, $color_light, $color_accent, $color_secondary, $color_secondary);
 
     &.dark {
         margin: 0 auto;
 
-        @include mixins.stylish-btn-arrow(null, colors.$color_secondary, colors.$color_secondary, colors.$color_primary, colors.$color_accent);
+        @include stylish-btn-arrow(null, $color_secondary, $color_secondary, $color_primary, $color_accent);
     }
 
     &-left {
-        @include mixins.stylish-btn-arrow(left, colors.$color_light, colors.$color_accent, colors.$color_secondary, colors.$color_secondary);
+        @include stylish-btn-arrow(left, $color_light, $color_accent, $color_secondary, $color_secondary);
     }
 
     &-right {
-        @include mixins.stylish-btn-arrow(right, colors.$color_light, colors.$color_accent, colors.$color_secondary, colors.$color_secondary);
+        @include stylish-btn-arrow(right, $color_light, $color_accent, $color_secondary, $color_secondary);
     }
 }
 
