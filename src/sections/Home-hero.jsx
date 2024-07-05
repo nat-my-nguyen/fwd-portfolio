@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import CTAProjectAbout from "../components/CTA-project-about"
 
 const HomeHero = ( { data } ) => {
     return (
@@ -7,8 +8,7 @@ const HomeHero = ( { data } ) => {
             <p className="hero-quote">{data.acf.hero_quote}</p>
             <a href="#intro"><img className="down-arrow" src="/src/assets/arrow-down-solid-fontawesome.svg" alt="Arrow SVG icon" /></a>
             <p id="intro" className="hero-intro">{data.acf.hero_intro}</p>
-            <Link to="/projects" className="link-btn">View Projects</Link>
-            <Link to="/about" className="link-btn">About Me</Link>
+            <CTAProjectAbout />
         </section>
     )
 }

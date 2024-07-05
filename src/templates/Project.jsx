@@ -75,7 +75,7 @@ const Project = () => {
 
     return (
         <>
-            <div className="project-detail">
+            <section className="project-detail">
                 <h1 dangerouslySetInnerHTML={{ __html: projectData.title.rendered }}></h1>
                 <div className="project-content">
                     <section>
@@ -84,6 +84,10 @@ const Project = () => {
                     </section>
 
                     {carouselImages.length > 0 && <CarouselSlide images={carouselImages} />}
+                    
+                    <div className="visit-link">
+                        <a href={projectData.acf.live_link} className="link-btn-right">Visit Live</a>
+                    </div>
 
                     <section>
                         <h2 className="txt-header">Collaboration:</h2>
@@ -98,8 +102,6 @@ const Project = () => {
                             skills={projectData.acf.prog_skills}
                         />
                     </section>
-
-                    <a href={projectData.acf.live_link}>Visit Live</a>
 
                     <Accordion allowMultiple transition transitionTimeout={400}>
                         <AccordionItem 
@@ -126,13 +128,13 @@ const Project = () => {
                             <div dangerouslySetInnerHTML={{__html: projectData.acf.accordion.content_hurdles}}></div>
                         </AccordionItem>
                     </Accordion>
-
-                    <div className="cta-container">
-                        <NextProjectLink projectsList={projectsList} />
-                        <CTAProjectContact />
-                    </div>
                 </div>
-            </div>
+
+                <div className="cta-container">
+                    <NextProjectLink projectsList={projectsList} />
+                    <CTAProjectContact />
+                </div>
+            </section>
         </>
     );
 }

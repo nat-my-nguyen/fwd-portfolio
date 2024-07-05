@@ -31,12 +31,3 @@
         max-width: 300px;
     }
 }
-
-.nav-icon img {
-    margin: 0 auto;
-    width: 1.625rem;
-}
-
-.nav-icon:hover img {
-    @include icon-hover-effect(50%, $color_accent);
-}

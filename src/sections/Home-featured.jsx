@@ -1,4 +1,5 @@
 import ProjectsList from '../components/Projects-list'
+import { Link } from 'react-router-dom';
 
 const FeaturedProjects = ( { data } ) => {
     //Array of specific project IDs to display
@@ -13,6 +14,9 @@ const FeaturedProjects = ( { data } ) => {
             <h2>Featured Projects</h2>
             {/* Output specific projects, limited to two on Home Page */}
             <ProjectsList projects={specificPosts} />
+            <div>
+                <Link to='/projects' className="link-btn dark">Visit the Projects</Link>
+            </div>
         </section>
     )
 }

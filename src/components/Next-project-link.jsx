@@ -20,7 +20,7 @@ const NextProjectLink = ({ projectsList }) => {
 
     return (
         <Link to={`/projects/${nextProject.slug}`} className="link-btn next-link">
-            {nextProject.title.rendered}
+            View Next: {nextProject.title.rendered}
             {nextProject.featured_media !== 0 && nextProject._embedded &&
                 <figure className="featured-image__next-preview" dangerouslySetInnerHTML={featuredImage(nextProject._embedded['wp:featuredmedia'][0])}></figure>
             }

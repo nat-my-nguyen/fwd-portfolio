@@ -5,13 +5,13 @@ const ProjectsList = ( { projects } ) => {
     return (
         <>
             {projects.map(post => (
-                <article key={post.id} id={`post-${post.id}`} className="project-item">
+                <article key={post.id} className="project-item">
                     <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h2>
                     <h3 className="subtitle">{post.acf.subtitle}</h3>
                     {post.featured_media !== 0 && post._embedded &&
                         <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
                     }
-                    <div className="project-content">
+                    <section className="project-content">
 
                         <h3 className="txt-header">Project Overview:</h3>
                         <p className="proj-overview">{post.acf.overview}</p>
@@ -28,7 +28,7 @@ const ProjectsList = ( { projects } ) => {
                         <p className="proj-stacks">
                             {post.acf.prog_skills.map(skill => skill.label).join(', ')}
                         </p>
-                    </div>
+                    </section>
                         
                     <Link to={`/projects/${post.slug}`} className="link-btn dark">More Details</Link>
                 </article>

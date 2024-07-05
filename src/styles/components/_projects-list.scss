@@ -13,6 +13,10 @@
         }
     }
 
+    .project-item h2 {
+        text-align: center;
+    }
+
     h3.subtitle {
         font-weight: 500;
     }
@@ -25,7 +29,7 @@
         color: $color_primary;
     
         h2:not(.project-item h2),
-        article.project-item:not(:last-of-type) {
+        article.project-item {
             @include stylish-border-bottom($color_accent);
         }
     
@@ -36,11 +40,11 @@
     }
 
     //Projects page stylings
-    .projects-page {
+    &.projects-page {
         color: $color_secondary;
     
         h2:not(.project-item h2),
-        article.project-item:not(:last-of-type) {
+        article.project-item {
             @include stylish-border-bottom($color_secondary);
         }
     

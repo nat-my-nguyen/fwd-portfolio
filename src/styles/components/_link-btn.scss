@@ -1,14 +1,16 @@
 @use "../abstracts/mixins/mixins" as *;
 @use "../abstracts/variables/colors" as *;
 
+.link-btn,
+.link-btn-left,
+.link-btn-right {
+    margin: .5rem;
+}
+
 .link-btn {
+    text-align: center;
+
     @include stylish-btn-arrow(null, $color_light, $color_accent, $color_secondary, $color_secondary);
-
-    &.dark {
-        margin: 0 auto;
-
-        @include stylish-btn-arrow(null, $color_secondary, $color_secondary, $color_primary, $color_accent);
-    }
 
     &-left {
         @include stylish-btn-arrow(left, $color_light, $color_accent, $color_secondary, $color_secondary);
@@ -19,6 +21,19 @@
     }
 }
 
-.next-link {
+//Home positioning and specific stylings within Featured section
+.featured-section .link-btn.dark {
+    margin: 0 auto;
 
+    @include stylish-btn-arrow(null, $color_secondary, $color_secondary, $color_primary, $color_accent);
+}
+
+.featured-section div {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+//Positioning .link-btn div in single Project
+.visit-link {
+    text-align: center;
 }

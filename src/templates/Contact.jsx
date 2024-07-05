@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
+import CTAProjectAbout from '../components/CTA-project-about'
 
 const Contact = () => {
     const [contactData, setContactData] = useState(null)
@@ -25,9 +26,11 @@ const Contact = () => {
 
     return (
         <>
-            <h1 dangerouslySetInnerHTML={{__html:contactData.title.rendered}}></h1>
-            <section dangerouslySetInnerHTML={{__html:contactData.content.rendered}}></section>
-            <div>
+            <section className="page-intro">
+                <h1 dangerouslySetInnerHTML={{__html:contactData.title.rendered}} />
+                <div dangerouslySetInnerHTML={{__html:contactData.content.rendered}} />
+            </section>
+            <div className="contact-list">
                 <ul>
                 {contactData.acf.contact_email && contactData.acf.contact_email.map((item, index) => (
                     <li key={index}>
@@ -41,12 +44,13 @@ const Contact = () => {
                     <li key={index}>
                         <a href={item.social_link} className="soc-icon">
                             <img src={item.social_icon.url} alt={item.social_icon.alt} />
-                            {item.social_link}
+                            {item.link_label}
                         </a>
                     </li>
                 ))}
                 </ul>
             </div>
+            <CTAProjectAbout />
         </>
     )
 }

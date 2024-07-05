@@ -27,9 +27,11 @@ const About = () => {
 
     return (
         <>
-            <h1 dangerouslySetInnerHTML={{__html:aboutData.title.rendered}}></h1>
-            <section dangerouslySetInnerHTML={{__html:aboutData.content.rendered}}></section>
-            <section className="skills-section" id={`post-${aboutData.id}`}>
+            <section className="page-intro">
+                <h1 dangerouslySetInnerHTML={{__html:aboutData.title.rendered}} />
+                <div dangerouslySetInnerHTML={{__html:aboutData.content.rendered}} />
+            </section>
+            <section className="skills-section">
                 <SkillsList
                     title="Tech Stack"
                     skills={aboutData.acf.tech_skills}
@@ -46,8 +48,8 @@ const About = () => {
                         </div>
                     ))}
                 </div>
+                <CTAProjectContact />
             </section>
-            <CTAProjectContact />
         </>
     )
 }

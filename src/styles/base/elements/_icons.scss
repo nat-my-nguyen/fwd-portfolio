@@ -1,0 +1,22 @@
+@use "../../abstracts/mixins/mixins" as *;
+@use "../../abstracts/variables/colors" as *;
+
+.nav-icon img {
+    margin: 0 auto;
+    width: 1.625rem;
+}
+
+.nav-icon:hover img {
+    @include icon-hover-effect(50%, $color_accent);
+}
+
+li a.soc-icon {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+
+    img {
+        display: inline-block;
+        width: 2rem;
+    }
+}
