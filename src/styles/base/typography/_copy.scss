@@ -18,3 +18,8 @@ p.hero-quote {
 	font-family: $font_heading;
 	font-size: 1.5rem;
 }
+
+.stack-card p {
+	@include responsive-text(1rem, 1.125rem);
+	font-weight: 600;
+}

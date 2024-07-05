@@ -30,7 +30,6 @@ export const displayDevicon = (value) => {
     if (notAvailableDeviconList.includes(value)) {
         return null
     }
-    // const deviconName = value.toLowerCase().replace(/\s+/g, '')
     const iconClass = `devicon-${value}-plain`
     return <i className={iconClass} key={value}></i>
 }

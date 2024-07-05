@@ -11,7 +11,7 @@ h4 {
 
 h1,
 .projects-container h2:not(.project-item h2),
-.skills-section h2:first-of-type {
+.skills-section h2:first-of-type:not(h2.txt-header) {
 	@include responsive-heading(1.875rem, 2.25rem, 2.5rem);
 	@include responsive-heading-align;
 }

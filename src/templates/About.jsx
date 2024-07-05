@@ -38,8 +38,8 @@ const About = () => {
                     title="Programs & Tools"
                     skills={aboutData.acf.prog_skills}
                 />
-                <h2 className="txt-header">Etc Skills</h2>
                 <div className="stack-container">
+                    <h2 className="txt-header">Etc Skills</h2>
                     {aboutData.acf.etc_skills.map((skill, index) => (
                         <div key={index} className="stack-card">
                             <p>{skill.label}</p>

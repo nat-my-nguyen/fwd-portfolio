@@ -1,10 +1,38 @@
 @use "../abstracts/mixins/mixins" as *;
 @use "../abstracts/variables/colors" as *;
 
-.skills-section {
-    
+.stack-container {
+    margin: 2rem 0 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    h2.txt-header {
+        width: 100%;
+    }
 }
 
 .stack-card {
-    // @include mixins.stylish-border(colors.$color_secondary)
+    @include stylish-border($color_secondary);
+    margin: .5rem;
+    padding: .75rem;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: $color_secondary;
+    color: $color_light;
+
+    p {
+        margin: 0 .625rem 0 0;
+    }
+
+    i {
+        @include responsive-text(1.5rem, 2rem);
+    }
+
+    &:hover {
+        scale: .95;
+        transition: scale .5s ease;
+    }
 }
