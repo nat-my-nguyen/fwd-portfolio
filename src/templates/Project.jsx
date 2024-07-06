@@ -21,6 +21,7 @@ const Project = () => {
     const { slug } = useParams()
     const [projectData, setProjectData] = useState(null)
     const [carouselImages, setCarouselImages] = useState([])
+    const [iconData, setIconData] = useState(null)
     const [projectsList, setProjectsList] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -48,6 +49,15 @@ const Project = () => {
             return images
         }
 
+        /* Fetch icon data for carousel buttons*/
+        const fetchIconData = async () => {
+            const response = await fetch(`${restBase}pages/219?acf_format=standard&_embed`)
+            if (response.ok) {
+                const data = await response.json()
+                setIconData(data)
+            }
+        }
+
         /*Fetches all project posts, this is for the NextProjectLink*/
         const fetchProjectsList = async () => {
             const response = await fetch(`${restBase}posts?acf_format=standard&_embed`)
@@ -58,7 +68,7 @@ const Project = () => {
         }
 
         const fetchData = async () => {
-            await Promise.all( [ fetchProjectData(), fetchProjectsList() ] )
+            await Promise.all( [ fetchProjectData(), fetchIconData(), fetchProjectsList() ] )
             setLoadStatus(true)
         }
 
@@ -83,7 +93,9 @@ const Project = () => {
                         <div dangerouslySetInnerHTML= {{__html: projectData.acf.requirements}}></div>
                     </section>
 
-                    {carouselImages.length > 0 && <CarouselSlide images={carouselImages} />}
+                    {carouselImages.length > 0 && iconData && (
+                        <CarouselSlide images={carouselImages} icons={iconData.acf} />
+                    )}
                     
                     <div className="visit-link">
                         <a href={projectData.acf.live_link} className="link-btn-right">Visit Live</a>

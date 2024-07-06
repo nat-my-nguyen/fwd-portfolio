@@ -1,0 +1,38 @@
+@use "../../abstracts/variables/breakpoints" as *;
+@use "../../abstracts/variables/colors" as *;
+
+.slide-control-container {
+
+}
+
+button.slide-btn {
+    border-top: .1875rem solid $color_secondary;
+    border-bottom: .1875rem solid $color_secondary;
+    padding: .25rem;
+    background-color: $color_primary;
+    cursor: pointer;
+    position: absolute;
+    // transform: translateY(-50%);
+    height: 40%;
+    z-index: 10;
+
+    &.left {
+        border-right: .1875rem solid $color_secondary;
+        border-left: none;
+        border-radius: 0 1rem 1rem 0;
+        left: 0;
+    }
+
+    &.right {
+        border-left: .1875rem solid $color_secondary;
+        border-right: none;
+        border-radius: 1rem 0 0 1rem;
+        right: 0;
+    }
+
+    .slide-icon {
+        display: block;
+        width: 1.5rem;
+        height: auto;
+    }
+}

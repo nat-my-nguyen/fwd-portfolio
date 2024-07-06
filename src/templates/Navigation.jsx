@@ -3,7 +3,7 @@ import { restBase } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
 import { NavLink } from "react-router-dom"
 
-function Navigation() {
+const Navigation = () => {
     const [navData, setNavData] = useState(null)
     const [logoData, setLogoData] = useState( { default: '', hover: '' } )
     const [isLoaded, setLoadStatus] = useState(false)
@@ -28,10 +28,10 @@ function Navigation() {
     //Setting URLs for Sass content to site-logo NavLink, appending logo images
     useEffect(() => {
         if (isLoaded) {
-            const logoElement = document.querySelector('.site-logo');
+            const logoElement = document.querySelector('.site-logo')
             if (logoElement) {
-                logoElement.style.setProperty('--logo-default', `url(${logoData.default})`);
-                logoElement.style.setProperty('--logo-hover', `url(${logoData.hover})`);
+                logoElement.style.setProperty('--logo-default', `url(${logoData.default})`)
+                logoElement.style.setProperty('--logo-hover', `url(${logoData.hover})`)
             }
         }
     }, [isLoaded, logoData])
