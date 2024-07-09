@@ -1,3 +1,4 @@
+@use "../abstracts/variables/breakpoints" as *;
 @use "../abstracts/mixins/mixins" as *;
 @use "../abstracts/variables/colors" as *;
 
@@ -13,7 +14,8 @@
         }
     }
 
-    .project-item h2 {
+    .project-item h2,
+    h3.subtitle {
         text-align: center;
     }
 
@@ -51,6 +53,39 @@
         .project-item h2,
         p {
             color: $color_dark;
+        }
+    }
+
+    @media screen and (min-width: $mq_breakpoint_large) {
+        .project-item {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            grid-template-areas:
+                "title title title"
+                "subtitle subtitle subtitle"
+                "featimage content content"
+                "linkbtn content content";
+
+            h2 {
+                grid-area: title;
+            }
+
+            h3.subtitle {
+                grid-area: subtitle;
+            }
+
+            figure.featured-image {
+                grid-area: featimage;
+                
+            }
+
+            .project-content {
+                grid-area: content;
+            }
+
+            a.link-btn {
+                grid-area: linkbtn;
+            }
         }
     }
 }

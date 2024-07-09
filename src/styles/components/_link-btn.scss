@@ -21,10 +21,13 @@
     }
 }
 
+.featured-section .link-btn.dark,
+.projects-page .link-btn {
+    margin: 0 auto;
+}
+
 //Home positioning and specific stylings within Featured section
 .featured-section .link-btn.dark {
-    margin: 0 auto;
-
     @include stylish-btn-arrow(null, $color_secondary, $color_secondary, $color_primary, $color_accent);
 }
 

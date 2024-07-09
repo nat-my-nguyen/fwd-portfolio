@@ -8,4 +8,9 @@ main {
         padding-top: 3.75rem;
         padding-bottom: 5.5rem;
     }
+
+    @media screen and (min-width: $mq_breakpoint_xl) {
+        margin: auto;
+        width: 68rem;
+    }
 }
