@@ -1,0 +1,72 @@
+@use "../abstracts/mixins/mixins" as *;
+@use "../abstracts/variables/breakpoints" as *;
+@use "../abstracts/variables/colors" as *;
+
+.project-content {
+    display: block;
+}
+
+@media screen and (min-width: $mq_breakpoint_large) {
+    .project-detail {
+        display: grid;
+        grid-template-areas: 
+            "title "
+            "subtitle "
+            "content"
+            "cta-btns";
+
+
+        .project-content {
+            margin-top: 3rem;
+            display: grid;
+            gap: 1rem;
+            grid-area: content;
+
+            grid-template-columns: repeat(5, 1fr);
+
+            grid-template-areas: 
+                "swiper swiper swiper swiper swiper"
+                "link link link link link"
+                "stacks stacks require require require"
+                "stacks stacks require require require"
+                "accord accord accord accord accord";
+
+            section.requirement {
+                grid-area: require;
+            }
+    
+            div.swipe-container {
+                grid-area: swiper;
+            }
+    
+            div.visit-link {
+                grid-area: link;
+            }
+    
+            section.col-stacks {
+                grid-area: stacks;
+
+                .stack-container {
+                    width: auto;
+                }
+            }
+    
+            div.szh-accordion {
+                grid-area: accord;
+            }
+        }
+
+        h1 {
+            grid-area: title;
+        }
+
+        h2.subtitle {
+            grid-area: subtitle;
+        }
+
+        div.cta-container {
+            grid-area: cta-btns;
+        }
+
+    }
+}

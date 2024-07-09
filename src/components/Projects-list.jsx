@@ -17,7 +17,7 @@ const ProjectsList = ( { projects } ) => {
                         <p className="proj-overview">{post.acf.overview}</p>
 
                         <h3 className="txt-header">Collaboration:</h3>
-                        <p className="proj-collaboration">{post.acf.collaboration.label}</p>
+                        <p className="proj-collab">{post.acf.collaboration.label}</p>
 
                         <h3 className="txt-header">Tech Stack:</h3>
                         <p className="proj-stacks">

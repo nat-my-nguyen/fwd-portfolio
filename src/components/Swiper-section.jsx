@@ -13,7 +13,7 @@ const SwiperSection = ({ images }) => {
             <Swiper
                 modules={[Navigation, Pagination, Mousewheel, Keyboard]}
                 slidesPerView={1}
-                spaceBetween={36}
+                spaceBetween={16}
                 loop={true}
                 loopAddBlankSlides={true}
                 navigation={true}
@@ -22,10 +22,16 @@ const SwiperSection = ({ images }) => {
                 keyboard={{ enabled: true }}
                 centeredSlides={true}
                 breakpoints={{
-                    992: {
-                    slidesPerView: 1.9,
-                    spaceBetween: 18,
-                    // centeredSlides: true,
+                    390: {
+                        slidesPerView: 1.5,
+                    },
+                    700: {
+                        slidesPerView: 1.9,
+                        spaceBetween: 18,
+                    },
+                    920: {
+                        slidesPerView: 2.5,
+                        spaceBetween: 24,
                     },
                 }}
                 breakpointsBase={'container'}

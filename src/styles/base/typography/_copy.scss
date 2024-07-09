@@ -10,13 +10,17 @@ body {
 
 p,
 li {
-	margin: .75rem 0;
+	margin: .5rem 0;
 	@include responsive-text(.875rem, 1rem);
 }
 
 p.hero-quote {
 	font-family: $font_heading;
 	font-size: 1.5rem;
+}
+
+.project-detail p.proj-collab {
+	margin-left: 2rem;
 }
 
 .stack-card p {

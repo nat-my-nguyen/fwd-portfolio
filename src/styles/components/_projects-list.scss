@@ -1,5 +1,5 @@
-@use "../abstracts/variables/breakpoints" as *;
 @use "../abstracts/mixins/mixins" as *;
+@use "../abstracts/variables/breakpoints" as *;
 @use "../abstracts/variables/colors" as *;
 
 .projects-container {
@@ -59,12 +59,14 @@
     @media screen and (min-width: $mq_breakpoint_large) {
         .project-item {
             display: grid;
+            align-items: start;
             grid-template-columns: 40% 60%;
             grid-template-areas:
                 "title title title"
                 "subtitle subtitle subtitle"
                 "featimage content content"
-                "linkbtn content content";
+                "linkbtn content content"
+                " . content content";
 
             h2 {
                 grid-area: title;
@@ -76,7 +78,7 @@
 
             figure.featured-image {
                 grid-area: featimage;
-                
+                margin: auto;
             }
 
             .project-content {

@@ -76,8 +76,9 @@ const Project = () => {
         <>
             <section className="project-detail">
                 <h1 dangerouslySetInnerHTML={{ __html: projectData.title.rendered }}></h1>
+                <h2 className="subtitle">{projectData.acf.subtitle}</h2>
                 <div className="project-content">
-                    <section>
+                    <section className="requirement">
                         <h2 className="txt-header">Project Requirement:</h2>
                         <div dangerouslySetInnerHTML= {{__html: projectData.acf.requirements}}></div>
                     </section>
@@ -88,9 +89,9 @@ const Project = () => {
                         <a href={projectData.acf.live_link} className="link-btn-right">Visit Live</a>
                     </div>
 
-                    <section>
+                    <section className="col-stacks">
                         <h2 className="txt-header">Collaboration:</h2>
-                        <p className="proj-collaboration">{projectData.acf.collaboration.label}</p>
+                        <p className="proj-collab">{projectData.acf.collaboration.label}</p>
 
                         <SkillsList
                             title="Tech Stack:"
