@@ -13,7 +13,7 @@
     @media screen and (min-width: $mq_breakpoint_large) {
         border-bottom: 0.0625rem solid $color_primary;
         justify-content: space-between;
-        position: relative;
+        position: fixed;
         background-color: $color_secondary;
     }
 }

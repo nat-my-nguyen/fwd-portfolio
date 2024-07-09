@@ -7,7 +7,8 @@
     width: 1.625rem;
     
     @media screen and (min-width: $mq_breakpoint_large) {
-        margin-right: .375rem; 
+        margin-right: .375rem;
+        width: 2.5rem;
     }
 }
 
@@ -19,15 +20,30 @@ li a.soc-icon {
     display: flex;
     align-items: center;
     gap: .75rem;
+}
 
+.contact-list li a.soc-icon {
     img {
         display: inline-block;
-        width: 2rem;
+        width: 4rem;
+        transition: padding .5s ease, transform .5s linear;
+    }
 
-        &:hover {
+    &:hover, 
+    &:focus {
+        img {
             padding: .125rem;
-            transition: padding .5s ease;
+            transform: rotate(-10deg);
+            
             @include icon-hover-effect(22%, $color_accent);
         }
+    }
+}
+
+footer .social-links li a.soc-icon img {
+    width: 2.5rem;
+
+    &:hover {
+        @include icon-hover-effect(50%, $color_accent);
     }
 }

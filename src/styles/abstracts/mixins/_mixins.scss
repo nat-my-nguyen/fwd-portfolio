@@ -41,11 +41,11 @@
 	border-bottom: 0.125rem solid $border_color;
 }
 
-//Adds circle background to icons and logo
+//Adds circle background to icons and logo, include within :hover{}
 @mixin icon-hover-effect($border_rad, $bg_color) {
 	border-radius: $border_rad;
 	background-color: $bg_color;
-	transition: background-color .6s;
+	transition: background-color .3s ease-in, border-radius .3s ease;
 }
 
 //Adds button-like styling for <a> tags with an arrow

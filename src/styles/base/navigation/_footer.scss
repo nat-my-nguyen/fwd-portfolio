@@ -5,7 +5,7 @@ footer {
     display: none;
 }
 
-@media screen and (min-width: $mq_breakpoint_medium) {
+@media screen and (min-width: $mq_breakpoint_large) {
     footer {
         display: block;
         position: absolute;
