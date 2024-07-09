@@ -12,62 +12,42 @@
     height: auto;
 }
 
-.projects-page .featured-image img,
-.carousel-current-image {
+.projects-page .featured-image img {
     @include stylish-border($color_secondary);
 }
 
-.carousel-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.swipe-container {
+    margin: auto;
+    overflow: hidden;
+    background-color: $color_secondary;
+    @include stylish-border($color_secondary);
 
-    .carousel-slide {
-        // margin: auto;
-        // padding: 0 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        // width: 100%;
-        position: relative;
-        overflow: hidden;
+    .swiper.swiper-initialized {
+        padding: 0 1rem 1.5rem;
+    }
 
-        .carousel-current-image {
-            // flex: 0 0 auto; /* Prevent it from shrinking or growing */
-            // max-width: 100%; /* Ensure it doesn't overflow */
-            // text-align: center;
-        
-            img {
-                // width: 100%;
-            //     height: auto;
-                // display: block;
-            //     margin: 0 auto; /* Center the image horizontally */
-            }
+    @media screen and (min-width: $mq_breakpoint_medium) {
+        .swiper-wrapper {
+            width: 150%;
+        }
+} 
+
+    @media screen and (min-width: $mq_breakpoint_large) {
+        width: 90%;
+        height: auto;
+    }
+
+    .swiper-slide {
+        text-align: center;
+
+        img {
+            margin: auto;
+            display: block;
         }
 
-        .carousel-other-image {
-            // display: none;
-            // width: auto;
-            // height: 100%;
+        &-next,
+        &-prev {
             opacity: .8;
-
-            &.prev {
-                // margin-right: auto;
-            }
-        
-            &.next {
-                // margin-left: auto;
-            }
-
-            &.placeholder {
-                // width: auto;
-                // height: 100%;
-            }
-    
-            @media screen and (min-width: $mq_breakpoint_medium) {
-                // display: block;
-                // opacity: .8;
-            }
         }
     }
 }

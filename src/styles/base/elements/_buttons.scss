@@ -1,38 +1,33 @@
-@use "../../abstracts/variables/breakpoints" as *;
 @use "../../abstracts/variables/colors" as *;
 
-.slide-control-container {
+.swiper-button-next,
+.swiper-button-prev {
+    border-radius: 50%;
+    color: $color_light;
+    font-weight: 600; //affects the thickness of the swiper-icon
 
+    &:hover,
+    &:active {
+        color: $color_accent;
+        transition: color .3s ease;
+    }
 }
 
-button.slide-btn {
-    border-top: .1875rem solid $color_secondary;
-    border-bottom: .1875rem solid $color_secondary;
-    padding: .25rem;
-    background-color: $color_primary;
-    cursor: pointer;
-    position: absolute;
-    // transform: translateY(-50%);
-    height: 40%;
-    z-index: 10;
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 0;
+}
 
-    &.left {
-        border-right: .1875rem solid $color_secondary;
-        border-left: none;
-        border-radius: 0 1rem 1rem 0;
-        left: 0;
-    }
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+    width: .625rem;
+    height: .625rem;
+}
 
-    &.right {
-        border-left: .1875rem solid $color_secondary;
-        border-right: none;
-        border-radius: 1rem 0 0 1rem;
-        right: 0;
-    }
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+    background-color: $color_light;
+    opacity: .3;
+}
 
-    .slide-icon {
-        display: block;
-        width: 1.5rem;
-        height: auto;
-    }
+.swiper-pagination-bullet-active {
+    background-color: $color_accent;
 }
