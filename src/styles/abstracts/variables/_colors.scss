@@ -4,11 +4,13 @@ $color_accent: #EAD0FB; //rgb(234,208,251)
 $color_dark: #151A1D; //rgb(21,26,29)
 $color_light: #FFFFFF; //rgb(255,255,255)
 
+//Links on light-colored background
 $color_link-main: $color_secondary;
 $color_link-hover: #3F4E9D;
 $color_link-visited: #49265A; 
 $color_link-active: $color_accent;
 
+//Links on dark-colored background
 $color_navlink-main: $color_light;
 $color_navlink-hover: $color_primary;
 $color_navlink-active: $color_accent;

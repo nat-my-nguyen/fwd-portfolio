@@ -23,3 +23,9 @@ p.hero-quote {
 	@include responsive-text(1rem, 1.125rem);
 	font-weight: 600;
 }
+
+footer p {
+	margin: .25rem 0;
+	color: $color_light;
+	font-size: .625rem;
+}

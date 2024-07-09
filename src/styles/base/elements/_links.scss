@@ -1,3 +1,4 @@
+@use "../../abstracts/variables/breakpoints" as *;
 @use "../../abstracts/variables/colors" as *;
 
 a,
@@ -7,16 +8,17 @@ nav ul li a,
     font-weight: 700;
 }
 
-a:not(.link-btn):not(.link-btn-dark):not(.link-btn-left):not(.link-btn-right):not(.site-navigation ul li a) {
+// a:not(.link-btn):not(.link-btn-dark):not(.link-btn-left):not(.link-btn-right):not(.site-navigation ul li a):not(.copyright a) {
+.contact-list a {
     color: $color_link-main;
+    
+    &:visited {
+        color: $color_link-visited;
+    }
 
     &:hover {
         color: $color_link-hover;
         text-decoration: underline;
-    }
-
-    &:visited {
-        color: $color_link-visited;
     }
 
     &:active {
@@ -24,24 +26,38 @@ a:not(.link-btn):not(.link-btn-dark):not(.link-btn-left):not(.link-btn-right):no
     }
 }
 
-.site-navigation ul li a {
-    display: block;
-    font-size: .625rem;
-    font-weight: 500;
-    text-transform: uppercase;
+.site-navigation ul li a,
+.copyright a  {
     color: $color_navlink-main;
-
-    &:hover {
-        color: $color_navlink-hover;
-        text-decoration: none;
-    }
 
     &:visited {
         color: $color_navlink-main;
     }
 
+    &:hover {
+        color: $color_navlink-hover;
+    }
+
     &:active {
         color: $color_navlink-active;
+    }
+}
+
+.copyright a {
+    font-size: .625rem;
+    text-decoration: underline;
+}
+
+.site-navigation ul li a {
+    display: block;
+    font-size: .625rem;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @media screen and (min-width: $mq_breakpoint_large) {
+        display: flex;
+        align-items: center;
+        font-size: 1.25rem;
     }
 }
 

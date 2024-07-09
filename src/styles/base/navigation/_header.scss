@@ -1,0 +1,62 @@
+@use "../../abstracts/mixins/mixins" as *;
+@use "../../abstracts/variables/breakpoints" as *;
+@use "../../abstracts/variables/colors" as *;
+
+.site-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 500;
+    width: 100%;
+
+    @media screen and (min-width: $mq_breakpoint_large) {
+        border-bottom: 0.0625rem solid $color_primary;
+        justify-content: space-between;
+        position: relative;
+        background-color: $color_secondary;
+    }
+}
+
+.site-branding {
+    border-bottom: 0.0625rem solid $color_primary;
+
+    @media screen and (min-width: $mq_breakpoint_large) {
+        border-bottom: none;
+    }
+}
+
+.site-navigation {
+    border-top: 0.0625rem solid $color_primary;
+    padding: .25rem 0;
+    position: fixed;
+    bottom: 0;
+    z-index: 500;
+    width: 100%;
+    background-color: $color_secondary;
+    
+    ul {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-width: 18.75rem;
+    }
+
+    @media screen and (min-width: $mq_breakpoint_large) {
+        border-top: none;
+        padding: 0;
+        position: static;
+        // bottom: unset;
+        width: auto;
+        background-color: transparent;
+
+        ul {
+            margin: 0 3rem;
+            justify-content: space-between;
+            max-width: unset;
+            width: 36rem;
+            float: right;
+        }
+    }
+}

@@ -1,9 +1,14 @@
 @use "../../abstracts/mixins/mixins" as *;
+@use "../../abstracts/variables/breakpoints" as *;
 @use "../../abstracts/variables/colors" as *;
 
 .nav-icon img {
     margin: 0 auto;
     width: 1.625rem;
+    
+    @media screen and (min-width: $mq_breakpoint_large) {
+        margin-right: .375rem; 
+    }
 }
 
 .nav-icon:hover img {
@@ -18,5 +23,11 @@ li a.soc-icon {
     img {
         display: inline-block;
         width: 2rem;
+
+        &:hover {
+            padding: .125rem;
+            transition: padding .5s ease;
+            @include icon-hover-effect(22%, $color_accent);
+        }
     }
 }

@@ -30,14 +30,14 @@ function FooterContacts() {
                 <ul>
                 {contactsData.acf.contact_email && contactsData.acf.contact_email.map((item, index) => (
                     <li key={index}>
-                        <a href={`mailto:${item.social_email}`} className="nav-icon">
+                        <a href={`mailto:${item.social_email}`} className="soc-icon">
                             <img src={item.social_icon.url} alt={item.social_icon.alt} />
                         </a>
                     </li>
                 ))}
                 {contactsData.acf.contact_link && contactsData.acf.contact_link.map((item, index) => (
                     <li key={index}>
-                        <a href={item.social_link} className="nav-icon">
+                        <a href={item.social_link} className="soc-icon">
                             <img src={item.social_icon.url} alt={item.social_icon.alt} />
                         </a>
                     </li>
