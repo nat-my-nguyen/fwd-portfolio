@@ -10,7 +10,7 @@ const FeaturedProjects = ( { data } ) => {
     const specificPosts = data.filter(post => specificProjectIDs.includes(post.id));
 
     return (
-        <section className="projects-container featured-section">
+        <section id="featured" className="projects-container featured-section">
             <h2>Featured Projects</h2>
             {/* Output specific projects, limited to two on Home Page */}
             <ProjectsList projects={specificPosts} />

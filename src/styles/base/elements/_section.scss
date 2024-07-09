@@ -1,3 +1,4 @@
+@use "../../abstracts/variables/breakpoints" as *;
 @use "../../abstracts/variables/colors" as *;
 
 section {
@@ -6,6 +7,14 @@ section {
 
 section.page-intro div {
     margin: 4rem 0;
+
+    @media screen and (min-width: $mq_breakpoint_medium) {
+        margin: 4rem 6rem;
+    }
+
+    @media screen and (min-width: $mq_breakpoint_large) {
+        margin: 4rem 10rem 6rem;
+    }
 }
 
 //Home page stylings
@@ -18,7 +27,6 @@ section.page-intro div {
 
     h1 {
         margin: 8rem 0 2rem;
-        color: $color_secondary;
     }
 
     p.hero-quote {
@@ -28,13 +36,71 @@ section.page-intro div {
         text-transform: uppercase;
     }
 
-    img.down-arrow {
+    a.down-arrow {
         position: absolute;
-        transform: translateX(-50%);
+        bottom: 55%;
         width: 2.5rem;
     }
 
     .hero-intro {
         padding: 10rem 1.25rem 2.5rem;;
+    }
+}
+
+@media screen and (min-width: $mq_breakpoint_medium) {
+    .home-hero {
+        min-height: 90vh;
+
+        h1 {
+            margin: 8rem 0 1rem;
+        }
+
+        p.hero-quote {
+            margin-bottom: 1rem;
+        }
+
+        a.down-arrow {
+            bottom: 6rem;
+        }
+
+        .hero-intro {
+            padding: 6rem 0 2rem;
+            width: 33rem;
+        }
+
+        .cta-container {
+            margin: 1rem 0 3rem;
+        }
+    }
+}
+
+@media screen and (min-width: $mq_breakpoint_large) {
+    .home-hero {
+        min-height: 80vh;
+
+        h1 {
+            margin: 6rem 0 0;
+        }
+
+        a.down-arrow {
+            bottom: 0;
+        }
+
+        .hero-intro {
+            padding: 4rem 0 2rem;
+            width: 40rem;
+        }
+    }
+}
+
+@media screen and (min-width: $mq_breakpoint_xl) {
+    .home-hero {
+        a.down-arrow {
+            bottom: 2rem;
+        }
+
+        .hero-intro {
+            padding: 4rem 0;
+        }
     }
 }
