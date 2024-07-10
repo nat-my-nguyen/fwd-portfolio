@@ -51,7 +51,7 @@ const Navigation = () => {
         }
     }, [isLoaded, logoData])
 
-    //Find the appended Nav Header with the Page's ID
+    //Find the appended Nav Header with the Page's ID for icon placement
     const getNavigationHeader = (pageId) => {
         const page = pageNavHeader.find(p => p.id === pageId)
         return page ? page.acf.navigation_header : ''
@@ -101,6 +101,25 @@ const Navigation = () => {
                     </li>
                 </ul>
             </nav>
+
+            {/*Background Pattern display: none as z-index isn't working*/}
+            <div 
+                className="background-pattern" 
+                style={{ 
+                    backgroundImage: `url(${logoData.hover})`, 
+                    backgroundSize: 'cover', 
+                    backgroundRepeat: 'no-repeat',
+                    width: '48rem',
+                    height: '46rem',
+                    position: 'fixed',
+                    top: '4rem',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    zIndex: '-500',
+                    opacity: '.1',
+                    display: 'none'
+                }} 
+            />
         </>
     )
 }

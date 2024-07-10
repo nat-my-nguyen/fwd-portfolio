@@ -2,24 +2,32 @@
 @use "../../abstracts/variables/colors" as *;
 
 footer {
-    display: none;
+    padding: 1rem 0 5rem;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $color_secondary;
+
+    .social-links ul {
+        display: none;
+    }
 }
 
 @media screen and (min-width: $mq_breakpoint_large) {
     footer {
+        padding: initial;
         display: block;
-        position: absolute;
-        bottom: 0;
         text-align: center;
         width: 100%;
-        background-color: $color_secondary;
+        
+        .social-links ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 4rem;
+            width: 100%;
+        }
     }
 
-    .social-links ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 4rem;
-        width: 100%;
-    }
 }

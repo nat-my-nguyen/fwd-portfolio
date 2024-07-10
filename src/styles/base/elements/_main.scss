@@ -1,12 +1,10 @@
 @use "../../abstracts/variables/breakpoints" as *;
 
 main {
-    padding-top: 3.5rem; //=logo padding + img height
-    padding-bottom: 4.5rem; //=site-navigation + footer height
+    padding-top: 3.25rem; //=logo padding + img height
 
     @media screen and (min-width: $mq_breakpoint_large) {
         padding-top: 3.75rem;
-        padding-bottom: 5.5rem;
     }
 
     @media screen and (min-width: $mq_breakpoint_xl) {

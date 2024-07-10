@@ -8,7 +8,6 @@ nav ul li a,
     font-weight: 700;
 }
 
-// a:not(.link-btn):not(.link-btn-dark):not(.link-btn-left):not(.link-btn-right):not(.site-navigation ul li a):not(.copyright a) {
 .contact-list a {
     color: $color_link-main;
     
@@ -44,7 +43,7 @@ nav ul li a,
 }
 
 .copyright a {
-    font-size: .625rem;
+    font-size: .875rem;
     text-decoration: underline;
 }
 

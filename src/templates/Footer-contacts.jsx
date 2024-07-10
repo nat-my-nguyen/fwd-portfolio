@@ -44,7 +44,7 @@ function FooterContacts() {
                 ))}
                 </ul>
             </div>
-            <p className="copyright">&copy;2024. All rights reserved. Created by <a href="https://natcreates.com/" target="_blank" rel="noopener noreferrer">Natalia Nguyen</a>.</p>
+            <p className="copyright">&copy;2024 Developed and designed by <a href="https://natcreates.com/" target="_blank" rel="noopener noreferrer">Natalia Nguyen</a>.</p>
         </>
     )
 }

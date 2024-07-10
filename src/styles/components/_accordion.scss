@@ -2,6 +2,7 @@
 * 
 * source: https://szhsin.github.io/react-accordion/docs/headless-ui/styles
 */
+@use "../abstracts/variables/breakpoints" as *;
 @use "../abstracts/variables/colors" as *;
 
 .App {
@@ -15,10 +16,11 @@
 }
 
 .szh-accordion {
-    // margin: 3rem .5rem;
-    border-bottom: 1px solid #ccc;
+    margin: 0 auto;
+    border-bottom: 0.125rem solid $color_accent;
+
         &__item {
-            border-top: 1px solid #ccc;
+            border-top: 0.125rem solid $color_accent;
 
         &-btn {
             cursor: pointer;
@@ -52,6 +54,10 @@
                 transform: rotate(180deg);
             }
         }
+    }
+
+    @media screen and (min-width: $mq_breakpoint_medium) {
+        width: 80%;
     }
 }
 

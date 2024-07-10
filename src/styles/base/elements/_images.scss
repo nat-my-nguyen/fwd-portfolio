@@ -16,6 +16,7 @@
     @include stylish-border($color_secondary);
 }
 
+//Single Project SwiperJS
 .swipe-container {
     margin: auto;
     overflow: hidden;
@@ -33,7 +34,7 @@
     } 
 
     @media screen and (min-width: $mq_breakpoint_large) {
-        width: 90%;
+        width: 80%;
         height: auto;
     }
 
@@ -50,4 +51,14 @@
             opacity: .8;
         }
     }
+}
+
+//About Page image
+.about-pic {
+    display: flex;
+    justify-content: center;
+
+    img {
+        max-height: 18rem;
+    } 
 }

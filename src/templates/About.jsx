@@ -30,6 +30,10 @@ const About = () => {
             <section className="page-intro">
                 <h1 dangerouslySetInnerHTML={{__html:aboutData.title.rendered}} />
                 <div dangerouslySetInnerHTML={{__html:aboutData.content.rendered}} />
+                <figure className="about-pic">
+                    <img    src={aboutData.acf.about_pic.url} 
+                            alt={aboutData.acf.about_pic.alt} />
+                </figure>
             </section>
             <section className="skills-section">
                 <SkillsList

@@ -1,4 +1,5 @@
 @use "../../abstracts/mixins/mixins" as *;
+@use "../../abstracts/variables/breakpoints" as *;
 @use "../../abstracts/variables/colors" as *;
 @use "../../abstracts/variables/typography" as *;
 
@@ -28,8 +29,9 @@ p.hero-quote {
 	font-weight: 600;
 }
 
-footer p {
+p.copyright {
 	margin: .25rem 0;
 	color: $color_light;
-	font-size: .625rem;
+	font-size: .875rem;
+	text-align: center;
 }
