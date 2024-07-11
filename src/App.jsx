@@ -6,12 +6,15 @@ import About from './templates/About'
 import Contact from './templates/Contact'
 import Navigation from './templates/Navigation'
 import FooterContacts from './templates/Footer-contacts'
+import BackgroundPattern from './templates/Background-pattern'
 import './styles/styles.scss'
 
 function App() {
 
   return (
     <>
+      <a href="#main" className="screen-reader-text">Skip to main content</a>
+      <BackgroundPattern />
       <header id="masthead" className="site-header">
         <Navigation />
       </header>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { featuredImage } from '../utilities/Utilities'
 
-const NextProjectLink = ({ projectsList }) => {
+const NextProjectLink = ( { projectsList } ) => {
     const { slug } = useParams()
     const [nextProject, setNextProject] = useState(null)
 
@@ -22,7 +22,9 @@ const NextProjectLink = ({ projectsList }) => {
         <Link to={`/projects/${nextProject.slug}`} className="link-btn next-link">
             View Next: {nextProject.title.rendered}
             {nextProject.featured_media !== 0 && nextProject._embedded &&
-                <figure className="featured-image__next-preview" dangerouslySetInnerHTML={featuredImage(nextProject._embedded['wp:featuredmedia'][0])}></figure>
+                <figure 
+                    className="featured-image__next-preview" 
+                    dangerouslySetInnerHTML={featuredImage(nextProject._embedded['wp:featuredmedia'][0])}></figure>
             }
         </Link>
     )

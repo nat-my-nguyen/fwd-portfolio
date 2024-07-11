@@ -6,7 +6,7 @@ import 'swiper/scss/pagination'
 import 'swiper/scss/effect-coverflow'
 
 
-const SwiperSection = ({ images }) => {
+const SwiperSection = ( { images } ) => {
 
     return (
         <div className="swipe-container">
@@ -39,7 +39,20 @@ const SwiperSection = ({ images }) => {
             >
                 {images.length > 0 && images.map((image) => (
                     <SwiperSlide key={image.id}>
-                        <img src={image.source_url} alt={image.alt_text} />
+                        <img
+                            src={image.source_url}
+                            srcSet={`
+                                ${image.small_url} 234w,
+                                ${image.medium_url} 356w,
+                                ${image.large_url} 400w
+                            `}
+                            sizes="(max-width: 460px) 234px, 
+                            (max-width: 768px) 356px, 
+                            400px"
+                            alt={image.alt_text}
+                            width="500" 
+                            height="397"
+                        />
                     </SwiperSlide>
                 ))}
             </Swiper>

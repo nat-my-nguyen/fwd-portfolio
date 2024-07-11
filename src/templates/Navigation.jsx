@@ -62,10 +62,12 @@ const Navigation = () => {
     }
 
     return (
-        <> 
+        <>
             {/*Logo*/}
             <div className="site-branding logo">
-                <NavLink  to='/' className="site-logo" />
+                <NavLink  to='/' className="site-logo">
+                    <span className="visually-hidden">Home</span>
+                </NavLink>
             </div>
             
             {/*Navigation with Icons*/}
@@ -74,52 +76,37 @@ const Navigation = () => {
                     <li>
                         <NavLink to='/' className="nav-icon" end>
                             <img    src={navData.acf.home_icon.url} 
-                                    alt={navData.acf.home_icon.alt} />
+                                    alt={navData.acf.home_icon.alt}
+                                    width="40" height="40" />
                             {getNavigationHeader(8)}
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to='/projects' className="nav-icon">
                             <img    src={navData.acf.projects_icon.url} 
-                                    alt={navData.acf.projects_icon.alt} />
+                                    alt={navData.acf.projects_icon.alt}
+                                    width="40" height="40" />
                             {getNavigationHeader(11)}
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to='/about' className="nav-icon">
                             <img    src={navData.acf.about_icon.url} 
-                                    alt={navData.acf.about_icon.alt} />
+                                    alt={navData.acf.about_icon.alt}
+                                    width="40" height="40" />
                             {getNavigationHeader(13)}
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to='/contact' className="nav-icon">
                             <img    src={navData.acf.contact_icon.url} 
-                                    alt={navData.acf.contact_icon.alt} />
+                                    alt={navData.acf.contact_icon.alt}
+                                    width="40" height="40" />
                             {getNavigationHeader(15)}
                         </NavLink>
                     </li>
                 </ul>
             </nav>
-
-            {/*Background Pattern display: none as z-index isn't working*/}
-            <div 
-                className="background-pattern" 
-                style={{ 
-                    backgroundImage: `url(${logoData.hover})`, 
-                    backgroundSize: 'cover', 
-                    backgroundRepeat: 'no-repeat',
-                    width: '48rem',
-                    height: '46rem',
-                    position: 'fixed',
-                    top: '4rem',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    zIndex: '-500',
-                    opacity: '.1',
-                    display: 'none'
-                }} 
-            />
         </>
     )
 }

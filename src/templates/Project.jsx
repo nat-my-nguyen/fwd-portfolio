@@ -10,7 +10,7 @@ import CTAProjectContact from '../components/CTA-project-contact'
 import SwiperSection from '../components/Swiper-section'
 
 /*Handles accordion headers in the Project*/
-const AccordionHeader = ({ text }) => (
+const AccordionHeader = ( { text } ) => (
     <>
         {text}
         <img className="chevron-down" src={chevronDown} alt="Chevron Down" />
@@ -44,7 +44,14 @@ const Project = () => {
             const getIDs = carousel.map(item => fetch(`${restBase}media/${item.id}`))
             const responses = await Promise.all(getIDs)
             const images = await Promise.all(responses.map(response => response.json()))
-            return images
+            return images.map( image => ({
+                id: image.id,
+                alt_text: image.alt_text,
+                source_url: image.source_url,
+                small_url: image.media_details.sizes.small ? image.media_details.sizes.small.source_url : image.source_url,
+                medium_url: image.media_details.sizes.medium ? image.media_details.sizes.medium.source_url : image.source_url,
+                large_url: image.media_details.sizes.large ? image.media_details.sizes.large.source_url : image.source_url
+            }))
         }
 
         /*Fetches all project posts, this is for the NextProjectLink*/

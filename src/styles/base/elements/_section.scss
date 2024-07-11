@@ -17,7 +17,7 @@ section.page-intro div {
     }
 }
 
-//Home page stylings
+//Home page section stylings
 .home-hero {
     display: flex;
     flex-direction: column;
@@ -97,6 +97,30 @@ section.page-intro div {
 
         .hero-intro {
             padding: 4rem 0;
+        }
+    }
+}
+
+//About page section stylings
+@media screen and (min-width: $mq_breakpoint_large) {
+    .page-intro.about-section {
+        display: grid;
+        grid-template-areas:
+        "title title"
+        "content picture";
+
+        h1 {
+            grid-area: title;
+        }
+
+        div {
+            grid-area: content;
+            margin: 4rem 2rem 6rem 6rem
+        }
+
+        figure.about-pic {
+            grid-area: picture;
+            margin: 4rem 6rem 6rem 2rem
         }
     }
 }

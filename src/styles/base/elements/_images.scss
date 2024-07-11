@@ -12,8 +12,39 @@
     height: auto;
 }
 
-.projects-page .featured-image img {
+.projects-page .featured-image img,
+.swipe-container,
+.about-pic img {
     @include stylish-border($color_secondary);
+}
+
+//Background image
+.background-pattern { 
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 28rem;
+    height: 28rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -500;
+    opacity: .1;
+
+    @media screen and (min-width: $mq_breakpoint_medium) {
+        width: 36rem;
+        height: 36rem;
+    }
+
+    @media screen and (min-width: $mq_breakpoint_large) {
+        width: 48rem;
+        height: 48rem;
+    }
+
+    @media screen and (min-width: $mq_breakpoint_xl) {
+        width: 60rem;
+        height: 60rem;
+    }
 }
 
 //Single Project SwiperJS
@@ -21,7 +52,6 @@
     margin: auto;
     overflow: hidden;
     background-color: $color_secondary;
-    @include stylish-border($color_secondary);
 
     .swiper.swiper-initialized {
         padding: 0 1rem 1.5rem;
@@ -60,5 +90,12 @@
 
     img {
         max-height: 18rem;
-    } 
+        object-fit: cover;
+        object-position: 100% 18%;
+
+        @media screen and (min-width: $mq_breakpoint_large) {
+            max-height: unset;
+            object-position: center;
+        }
+    }
 }

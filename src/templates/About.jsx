@@ -27,12 +27,21 @@ const About = () => {
 
     return (
         <>
-            <section className="page-intro">
+            <section className="page-intro about-section">
                 <h1 dangerouslySetInnerHTML={{__html:aboutData.title.rendered}} />
                 <div dangerouslySetInnerHTML={{__html:aboutData.content.rendered}} />
                 <figure className="about-pic">
-                    <img    src={aboutData.acf.about_pic.url} 
-                            alt={aboutData.acf.about_pic.alt} />
+                    <img
+                        src={aboutData.acf.about_pic.url}
+                        srcset={`
+                            ${aboutData.acf.about_pic.url} 300w,
+                            ${aboutData.acf.about_pic.sizes.medium_large} 600w,
+                        `}
+                        sizes="(max-width: 600px) 300px, 600px"
+                        alt={aboutData.acf.about_pic.alt}
+                        width="288"
+                        height="288"
+                    />
                 </figure>
             </section>
             <section className="skills-section">

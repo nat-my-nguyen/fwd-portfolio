@@ -28,6 +28,7 @@ const ResponsiveArrow = () => {
             <img
                 src="/assets/arrow-down-solid-fontawesome.svg"
                 alt="Arrow SVG icon"
+                width="40" height="53"
             />
         </a>
     )

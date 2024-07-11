@@ -15,6 +15,17 @@ li {
 	@include responsive-text(.875rem, 1rem);
 }
 
+.visually-hidden {
+	margin: -0.0625rem;
+	border: 0;
+	padding: 0;
+	position: absolute;
+	width: .0625rem;
+	height: .0625rem;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+  }
+
 p.hero-quote {
 	font-family: $font_heading;
 	font-size: 1.5rem;
@@ -30,7 +41,7 @@ p.hero-quote {
 }
 
 p.copyright {
-	margin: .25rem 0;
+	padding-bottom: .25rem;
 	color: $color_light;
 	font-size: .875rem;
 	text-align: center;
