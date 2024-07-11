@@ -52,7 +52,7 @@ section.page-intro div {
         min-height: 90vh;
 
         h1 {
-            margin: 8rem 0 1rem;
+            margin: 8rem 0 0;
         }
 
         p.hero-quote {
@@ -76,11 +76,7 @@ section.page-intro div {
 
 @media screen and (min-width: $mq_breakpoint_large) {
     .home-hero {
-        min-height: 80vh;
-
-        h1 {
-            margin: 6rem 0 0;
-        }
+        min-height: 84vh;
 
         a.down-arrow {
             bottom: 0;

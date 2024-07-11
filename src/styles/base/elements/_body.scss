@@ -4,5 +4,8 @@ body {
     background-color: $color_primary;
     min-height: 100vh;
     position: relative;
+}
+
+html {
     scroll-behavior: smooth;
 }

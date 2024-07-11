@@ -26,8 +26,7 @@ const ResponsiveArrow = () => {
     return (
         <a href="#intro" ref={ arrowRef } className="down-arrow">
             <img
-                
-                src="/src/assets/arrow-down-solid-fontawesome.svg"
+                src="/assets/arrow-down-solid-fontawesome.svg"
                 alt="Arrow SVG icon"
             />
         </a>

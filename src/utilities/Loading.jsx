@@ -1,4 +1,4 @@
-import loading from '../assets/loading.gif';
+import loading from '/assets/loading.gif';
 
 const Loading = () => {
     //Inline styling in case Loading loads faster than CSS

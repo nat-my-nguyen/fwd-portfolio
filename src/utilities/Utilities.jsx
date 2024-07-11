@@ -22,7 +22,8 @@ export const featuredImage = ( featuredImageObject ) => {
 * Better to not render empty tags, so will have to update the map and name list
 */
 const notAvailableDeviconList = [
-    "asana"
+    "asana",
+    "drawio"
 ]
 
 /*Check if there is an associated icon to display, if not return none*/
