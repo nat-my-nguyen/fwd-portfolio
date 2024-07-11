@@ -85,9 +85,11 @@ const Project = () => {
 
                     <SwiperSection images={carouselImages}/>
                     
-                    <div className="visit-link">
-                        <a href={projectData.acf.live_link} className="link-btn-right">Visit Live</a>
-                    </div>
+                    {projectData.acf.live_link && (
+                        <div className="visit-link">
+                            <a href={projectData.acf.live_link} className="link-btn-right">Visit Live</a>
+                        </div>
+                    )}
 
                     <section className="col-stacks">
                         <h2 className="txt-header">Collaboration:</h2>
