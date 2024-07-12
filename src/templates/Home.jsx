@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
@@ -41,6 +42,11 @@ const Home = () => {
 
     return (
         <>
+            <Helmet prioritizeSeoTags>
+                <title>{homeData.acf.meta_title}</title>
+                <meta name="description" content={homeData.acf.meta_description} />
+                <meta name="keywords" content={homeData.acf.meta_keywords} />
+            </Helmet>
             <HomeHero data={homeData}/>
             <FeaturedProjects data={postsData}/>
             <HomeSkills data={homeData}/>

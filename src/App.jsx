@@ -1,4 +1,5 @@
-import { Route, Routes, Link, NavLink } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
+import { Route, Routes } from 'react-router-dom'
 import Home from './templates/Home'
 import Projects from './templates/Projects'
 import Project from './templates/Project'
@@ -12,7 +13,7 @@ import './styles/styles.scss'
 function App() {
 
   return (
-    <>
+    <HelmetProvider>
       <a href="#main" className="screen-reader-text">Skip to main content</a>
       <BackgroundPattern />
       <header id="masthead" className="site-header">
@@ -30,7 +31,7 @@ function App() {
       <footer>
         <FooterContacts />
       </footer>
-    </>
+    </HelmetProvider>
   )
 }
 

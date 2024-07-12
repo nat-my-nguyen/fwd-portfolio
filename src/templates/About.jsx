@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
@@ -27,6 +28,11 @@ const About = () => {
 
     return (
         <>
+            <Helmet>
+                <title>{aboutData.acf.meta_title}</title>
+                <meta name="description" content={aboutData.acf.meta_description} />
+                <meta name="keywords" content={aboutData.acf.meta_keywords} />
+            </Helmet>
             <section className="page-intro about-section">
                 <h1 dangerouslySetInnerHTML={{__html:aboutData.title.rendered}} />
                 <div dangerouslySetInnerHTML={{__html:aboutData.content.rendered}} />
