@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { restBase } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
-import { Link } from "react-router-dom"
 
 function FooterContacts() {
     const [contactsData, setContactsData] = useState(null)
@@ -44,7 +43,7 @@ function FooterContacts() {
                 ))}
                 </ul>
             </div>
-            <p className="copyright">&copy;2024 Developed and designed by <a href="https://natcreates.com/" target="_blank" rel="noopener noreferrer">Natalia Nguyen</a>.</p>
+            <p className="copyright">&copy;2024 Developed and designed by <a href="https://natcreates.com/">Natalia Nguyen</a>.</p>
         </>
     )
 }

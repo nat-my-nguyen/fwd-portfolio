@@ -30,13 +30,14 @@ h2 {
 	@include responsive-heading(1.5rem, 1.625rem, 1.875rem);
 }
 
-h3.subtitle {
-	margin-bottom: 1rem;
-}
 
 h3,
 .project-detail .project-content h2 {
 	@include responsive-heading(1.25rem, 1.375rem, 1.5rem);
+}
+
+h3.subtitle {
+	margin-bottom: 1rem;
 }
 
 .txt-header {

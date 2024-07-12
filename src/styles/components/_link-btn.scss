@@ -5,11 +5,10 @@
 .link-btn-left,
 .link-btn-right {
     margin: .5rem;
+    text-align: center;
 }
 
 .link-btn {
-    text-align: center;
-
     @include stylish-btn-arrow(null, $color_light, $color_accent, $color_secondary, $color_secondary);
 
     &-left {
@@ -27,13 +26,14 @@
 }
 
 //Home positioning and specific stylings within Featured section
-.featured-section .link-btn.dark {
-    @include stylish-btn-arrow(null, $color_secondary, $color_secondary, $color_primary, $color_accent);
-}
-
 .featured-section div {
-    margin-top: 3rem;
     text-align: center;
+
+    .link-btn.dark {
+        margin-top: 3rem;
+
+        @include stylish-btn-arrow(null, $color_secondary, $color_secondary, $color_primary, $color_accent);
+    }
 }
 
 //Positioning .link-btn div in single Project

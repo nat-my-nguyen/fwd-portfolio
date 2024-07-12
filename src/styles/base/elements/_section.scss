@@ -6,7 +6,7 @@ section {
 }
 
 section.page-intro div {
-    margin: 4rem 0;
+    margin: 4rem 1rem;
 
     @media screen and (min-width: $mq_breakpoint_medium) {
         margin: 4rem 6rem;
@@ -115,12 +115,12 @@ section.page-intro div {
 
         div {
             grid-area: content;
-            margin: 4rem 2rem 6rem 6rem
+            margin: 4rem 2rem 2rem 6rem
         }
 
         figure.about-pic {
             grid-area: picture;
-            margin: 4rem 6rem 6rem 2rem
+            margin: 4rem 6rem 2rem 2rem
         }
     }
 }

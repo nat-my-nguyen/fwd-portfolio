@@ -3,11 +3,15 @@
 @use "../abstracts/variables/colors" as *;
 
 .project-content {
+    margin: 2rem 1rem;
+    /*Ideally would like to use Flexbox but it conflicts
+    with SwiperJS and Accordion default stylings*/
+
     @media screen and (min-width: $mq_breakpoint_medium) {
         section.requirement,
         section.col-stacks {
-            margin: 0 auto;
-            width: 37.5rem
+            margin: 2rem auto;
+            width: 37.5rem;
         }
     }
 }
@@ -24,18 +28,19 @@
         .project-content {
             margin-top: 3rem;
             display: grid;
-            gap: 1rem;
             grid-area: content;
-            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
             grid-template-areas: 
-                "swiper swiper swiper swiper swiper"
-                "link link link link link"
-                "stacks stacks require require require"
-                "stacks stacks require require require"
-                "accord accord accord accord accord";
+                "swiper swiper"
+                "link link"
+                "stacks require"
+                "stacks require"
+                "accord accord";
 
             section.requirement {
                 grid-area: require;
+                margin-right: 1rem;
             }
     
             div.swipe-container {
@@ -48,6 +53,7 @@
     
             section.col-stacks {
                 grid-area: stacks;
+                margin-left: 1rem;
             }
     
             div.szh-accordion {
@@ -72,6 +78,5 @@
         div.cta-container {
             grid-area: cta-btns;
         }
-
     }
 }

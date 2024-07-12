@@ -15,16 +15,17 @@ li {
 	@include responsive-text(.875rem, 1rem);
 }
 
+//Hiding home logo <a> text
 .visually-hidden {
 	margin: -0.0625rem;
 	border: 0;
 	padding: 0;
 	position: absolute;
+	overflow: hidden;
 	width: .0625rem;
 	height: .0625rem;
-	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
-  }
+}
 
 p.hero-quote {
 	font-family: $font_heading;
@@ -36,8 +37,8 @@ p.hero-quote {
 }
 
 .stack-card p {
-	@include responsive-text(1rem, 1.125rem);
 	font-weight: 600;
+	@include responsive-text(1rem, 1.125rem);
 }
 
 p.copyright {

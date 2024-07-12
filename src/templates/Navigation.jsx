@@ -23,7 +23,7 @@ const Navigation = () => {
             }
         }
 
-        //Fetches all pages, this is for the NavLink's headers
+        /* Fetches all pages, this is for the NavLink's headers */
         const fetchPageNavHeader = async () => {
             const response = await fetch(`${restBase}pages?acf_format=standard&_embed`)
             if (response.ok) {
@@ -40,7 +40,7 @@ const Navigation = () => {
         fetchData()
     }, [])
 
-    //Setting URLs for Sass content to site-logo NavLink, appending logo images
+    /* Setting URLs for Sass content to site-logo NavLink, appending logo images */
     useEffect(() => {
         if (isLoaded) {
             const logoElement = document.querySelector('.site-logo')
@@ -51,7 +51,7 @@ const Navigation = () => {
         }
     }, [isLoaded, logoData])
 
-    //Find the appended Nav Header with the Page's ID for icon placement
+    /* Find the appended Nav Header with the Page's ID for icon placement */
     const getNavigationHeader = (pageId) => {
         const page = pageNavHeader.find(p => p.id === pageId)
         return page ? page.acf.navigation_header : ''

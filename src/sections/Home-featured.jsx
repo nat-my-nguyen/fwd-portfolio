@@ -2,11 +2,11 @@ import ProjectsList from '../components/Projects-list'
 import { Link } from 'react-router-dom';
 
 const FeaturedProjects = ( { data } ) => {
-    //Array of specific project IDs to display
-    //35 = JS game, 38 = movie DB
+    /* Array of specific project IDs to display
+    35 = JS game, 38 = movie DB */
     const specificProjectIDs = [35, 38];
 
-    //Filter posts by specific project IDs
+    /* Filter posts by specific project IDs */
     const specificPosts = data.filter(post => specificProjectIDs.includes(post.id));
 
     return (

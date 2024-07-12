@@ -2,8 +2,34 @@
 @use "../../abstracts/variables/breakpoints" as *;
 @use "../../abstracts/variables/colors" as *;
 
+.loading-container {
+    position: relative;
+    height: 100vh;
+    
+    .loading {
+        border: 1rem solid $color_secondary;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 100;
+        background-color: $color_secondary;
+    }
+}
+
 .featured-image img {
     @include stylish-border($color_accent);
+
+    @media screen and (min-width: $mq_breakpoint_small) {
+        max-width: 22.5rem;
+    }
+    @media screen and (min-width: $mq_breakpoint_medium) {
+        max-width: 30rem;
+    }
+    @media screen and (min-width: $mq_breakpoint_large) {
+        max-width: 100%;
+    }
 }
 
 .featured-image__next-preview img {
@@ -44,42 +70,6 @@
     @media screen and (min-width: $mq_breakpoint_xl) {
         width: 60rem;
         height: 60rem;
-    }
-}
-
-//Single Project SwiperJS
-.swipe-container {
-    margin: auto;
-    overflow: hidden;
-    background-color: $color_secondary;
-
-    .swiper.swiper-initialized {
-        padding: 0 1rem 1.5rem;
-    }
-
-    @media screen and (min-width: $mq_breakpoint_medium) {
-        .swiper-wrapper {
-            width: 150%;
-        }
-    } 
-
-    @media screen and (min-width: $mq_breakpoint_large) {
-        width: 80%;
-        height: auto;
-    }
-
-    .swiper-slide {
-        text-align: center;
-
-        img {
-            margin: auto;
-            display: block;
-        }
-
-        &-next,
-        &-prev {
-            opacity: .8;
-        }
     }
 }
 

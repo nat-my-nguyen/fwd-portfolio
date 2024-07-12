@@ -38,12 +38,6 @@
     }
 }
 
-.site-logo,
-.site-logo:before,
-.site-logo:after {
-    display: inline-block;
-}
-
 .site-logo:before {
     content: var(--logo-default);
     transition: opacity .6s ease;

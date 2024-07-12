@@ -45,7 +45,6 @@
 
     @media screen and (min-width: $mq_breakpoint_large) {
         border-top: none;
-        padding: 0;
         position: static;
         width: auto;
         background-color: transparent;
@@ -54,8 +53,7 @@
             margin: 0 3rem;
             justify-content: space-between;
             max-width: unset;
-            width: 36rem;
-            float: right;
+            width: 38rem;
         }
     }
 }

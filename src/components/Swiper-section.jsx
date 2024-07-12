@@ -6,11 +6,12 @@ import 'swiper/scss/pagination'
 import 'swiper/scss/effect-coverflow'
 
 
-const SwiperSection = ( { images } ) => {
+const SwiperSection = ( { images, swiperRef } ) => {
 
     return (
         <div className="swipe-container">
             <Swiper
+                ref={swiperRef}
                 modules={[Navigation, Pagination, Mousewheel, Keyboard]}
                 slidesPerView={1}
                 spaceBetween={16}

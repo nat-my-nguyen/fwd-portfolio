@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { restBase } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
 import { useParams } from 'react-router-dom'
@@ -9,6 +9,9 @@ import SkillsList from '../components/Skills-list'
 import NextProjectLink from '../components/Next-project-link'
 import CTAProjectContact from '../components/CTA-project-contact'
 import SwiperSection from '../components/Swiper-section'
+import { register } from 'swiper/element/bundle'
+/* Register Swiper custom elements */
+register()
 
 /*Handles accordion headers in the Project*/
 const AccordionHeader = ( { text } ) => (
@@ -24,6 +27,7 @@ const Project = () => {
     const [carouselImages, setCarouselImages] = useState([])
     const [projectsList, setProjectsList] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
+    const swiperRef = useRef(null)
 
     useEffect(() => {
         const fetchProjectData = async () => {
@@ -32,7 +36,7 @@ const Project = () => {
                 const data = await response.json()
                 const project = data[0]
                 setProjectData(project)
-                /*If there are images in the ACF carousel, set the image data*/
+                /* If there are images in the ACF carousel, set the image data */
                 if (project.acf.carousel && project.acf.carousel.length > 0) {
                     const images = await fetchImageData(project.acf.carousel)
                     setCarouselImages(images)
@@ -40,7 +44,7 @@ const Project = () => {
             }
         }
 
-        /*Take an  array of image IDs from the WP media, fetch each data, then returns image object*/
+        /* Take an  array of image IDs from the WP media, fetch each data, then returns image object */
         const fetchImageData = async (carousel) => {
             const getIDs = carousel.map(item => fetch(`${restBase}media/${item.id}`))
             const responses = await Promise.all(getIDs)
@@ -55,7 +59,7 @@ const Project = () => {
             }))
         }
 
-        /*Fetches all project posts, this is for the NextProjectLink*/
+        /* Fetches all project posts, this is for the NextProjectLink */
         const fetchProjectsList = async () => {
             const response = await fetch(`${restBase}posts?acf_format=standard&_embed`)
             if (response.ok) {
@@ -72,9 +76,17 @@ const Project = () => {
         fetchData()
     }, [slug])
 
+    /* Scrolls to top upon page reload */
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [slug])
+
+    /* Resets Swiper to the first slide */
+    useEffect(() => {
+        if (swiperRef.current && swiperRef.current.swiper) {
+          swiperRef.current.swiper.slideTo(0)
+        }
+      }, [carouselImages])
 
     if (!isLoaded) {
         return <Loading/>
@@ -96,7 +108,7 @@ const Project = () => {
                         <div dangerouslySetInnerHTML= {{__html: projectData.acf.requirements}}></div>
                     </section>
 
-                    <SwiperSection images={carouselImages}/>
+                    <SwiperSection images={carouselImages} swiperRef={swiperRef} />
                     
                     {projectData.acf.live_link && (
                         <div className="visit-link">

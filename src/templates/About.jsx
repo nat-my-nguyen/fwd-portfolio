@@ -39,7 +39,7 @@ const About = () => {
                 <figure className="about-pic">
                     <img
                         src={aboutData.acf.about_pic.url}
-                        srcset={`
+                        srcSet={`
                             ${aboutData.acf.about_pic.url} 300w,
                             ${aboutData.acf.about_pic.sizes.medium_large} 600w,
                         `}

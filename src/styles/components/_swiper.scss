@@ -1,0 +1,26 @@
+@use "../abstracts/variables/breakpoints" as *;
+@use "../abstracts/variables/colors" as *;
+
+//Single Project SwiperJS
+.swipe-container {
+    margin: auto;
+    overflow: hidden;
+    background-color: $color_secondary;
+    min-width: 0;
+    min-height: 0;
+
+    .swiper.swiper-initialized {
+        padding: 0 1rem 1.5rem;
+    }
+
+    @media screen and (min-width: $mq_breakpoint_medium) {
+        width: 80%;
+    } 
+
+    .swiper-slide {
+        &-next,
+        &-prev {
+            opacity: .7;
+        }
+    }
+}

@@ -2,44 +2,44 @@
 @use "../../abstracts/variables/breakpoints" as *;
 @use "../../abstracts/variables/colors" as *;
 
-.nav-icon img {
-    margin: 0 auto;
-    width: 1.625rem;
-    
-    @media screen and (min-width: $mq_breakpoint_large) {
-        margin-right: .375rem;
-        width: 2.5rem;
+//Navigation Icons
+.nav-icon {
+    img {
+        margin: 0 auto;
+        width: 1.625rem;
+
+        @media screen and (min-width: $mq_breakpoint_large) {
+            margin-right: .375rem;
+            width: 2.5rem;
+        }
+    }
+    &:hover img {
+        @include icon-hover-effect(50%, $color_accent);
     }
 }
 
-.nav-icon:hover img {
-    @include icon-hover-effect(50%, $color_accent);
-}
-
-li a.soc-icon {
+//Contact Icons
+.contact-list li a.soc-icon {
     display: flex;
     align-items: center;
     gap: .75rem;
-}
 
-.contact-list li a.soc-icon {
     img {
         display: inline-block;
         width: 4rem;
-        transition: padding .5s ease, transform .5s linear;
+        transition: padding .3s ease, transform .5s linear;
     }
 
-    &:hover, 
-    &:focus {
-        img {
-            padding: .125rem;
-            transform: rotate(-10deg);
-            
-            @include icon-hover-effect(22%, $color_accent);
-        }
+    &:hover img, 
+    &:focus img {
+        padding: .125rem;
+        transform: rotate(-10deg);
+        
+        @include icon-hover-effect(22%, $color_accent);
     }
 }
 
+//Footer Icons
 footer .social-links li a.soc-icon img {
     width: 2.5rem;
 

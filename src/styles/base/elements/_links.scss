@@ -8,6 +8,14 @@ nav ul li a,
     font-weight: 700;
 }
 
+a img {
+    display: block;
+}
+
+[class^="link-btn"] {
+    display: inline-block;
+}
+
 .contact-list a {
     color: $color_link-main;
     
@@ -58,12 +66,4 @@ nav ul li a,
         align-items: center;
         font-size: 1.25rem;
     }
-}
-
-a img {
-    display: block;
-}
-
-[class^="link-btn"] {
-    display: inline-block;
 }

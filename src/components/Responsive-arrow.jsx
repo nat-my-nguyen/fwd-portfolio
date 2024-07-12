@@ -14,10 +14,10 @@ const ResponsiveArrow = () => {
 
         updateHREF()
 
-        //Add resize event listener
+        /* Add resize event listener */
         window.addEventListener('resize', updateHREF)
 
-        //Clean up the event listener on component unmount
+        /* Clean up the event listener on component unmount */
         return () => {
             window.removeEventListener('resize', updateHREF)
         }
