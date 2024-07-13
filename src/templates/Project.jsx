@@ -1,7 +1,5 @@
 import { Helmet } from 'react-helmet-async'
-import { useState, useEffect, useRef } from 'react'
-import { restBase } from '../utilities/Utilities'
-import Loading from '../utilities/Loading'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Accordion, AccordionItem } from '@szhsin/react-accordion'
 import chevronDown from '/assets/chevron-down.svg'
@@ -9,9 +7,8 @@ import SkillsList from '../components/Skills-list'
 import NextProjectLink from '../components/Next-project-link'
 import CTAProjectContact from '../components/CTA-project-contact'
 import SwiperSection from '../components/Swiper-section'
-import { register } from 'swiper/element/bundle'
-/* Register Swiper custom elements */
-register()
+import Loading from '../utilities/Loading'
+import { restBase } from '../utilities/Utilities'
 
 /*Handles accordion headers in the Project*/
 const AccordionHeader = ( { text } ) => (
@@ -27,7 +24,6 @@ const Project = () => {
     const [carouselImages, setCarouselImages] = useState([])
     const [projectsList, setProjectsList] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
-    const swiperRef = useRef(null)
 
     useEffect(() => {
         const fetchProjectData = async () => {
@@ -76,18 +72,6 @@ const Project = () => {
         fetchData()
     }, [slug])
 
-    /* Scrolls to top upon page reload */
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [slug])
-
-    /* Resets Swiper to the first slide */
-    useEffect(() => {
-        if (swiperRef.current && swiperRef.current.swiper) {
-          swiperRef.current.swiper.slideTo(0)
-        }
-      }, [carouselImages])
-
     if (!isLoaded) {
         return <Loading/>
     }
@@ -107,63 +91,37 @@ const Project = () => {
                         <h2 className="txt-header">Project Requirement:</h2>
                         <div dangerouslySetInnerHTML= {{__html: projectData.acf.requirements}}></div>
                     </section>
-
-                    <SwiperSection images={carouselImages} swiperRef={swiperRef} />
-                    
+                    <SwiperSection images={carouselImages} />
                     {projectData.acf.live_link && (
                         <div className="visit-link">
                             <a href={projectData.acf.live_link} className="link-btn-right">Visit Live</a>
                         </div>
                     )}
-
                     <section className="col-stacks">
                         <h2 className="txt-header">Collaboration:</h2>
                         <p className="proj-collab">{projectData.acf.collaboration.label}</p>
-
-                        <SkillsList
-                            title="Tech Stack:"
-                            skills={projectData.acf.tech_skills}
-                        />
-                        <SkillsList
-                            title="Programs & Tools:"
-                            skills={projectData.acf.prog_skills}
-                        />
+                        <SkillsList title="Tech Stack:" skills={projectData.acf.tech_skills} />
+                        <SkillsList title="Programs & Tools:" skills={projectData.acf.prog_skills} />
                     </section>
-
                     <Accordion allowMultiple transition transitionTimeout={400}>
-                        <AccordionItem 
-                            header={
-                                <AccordionHeader 
-                                text={projectData.acf.accordion.header_insights}
-                                />} initialEntered>
+                        <AccordionItem header={ <AccordionHeader text={projectData.acf.accordion.header_insights} /> } initialEntered>
                             <div dangerouslySetInnerHTML={{__html: projectData.acf.accordion.content_insights}}></div>
                         </AccordionItem>
-
-                        <AccordionItem 
-                            header={
-                                <AccordionHeader 
-                                text={projectData.acf.accordion.header_features}
-                                /> }>
+                        <AccordionItem header={ <AccordionHeader text={projectData.acf.accordion.header_features} /> }>
                             <div dangerouslySetInnerHTML={{__html: projectData.acf.accordion.content_features}}></div>
                         </AccordionItem>
-
-                        <AccordionItem 
-                            header={
-                                <AccordionHeader 
-                                text={projectData.acf.accordion.header_hurdles}
-                                /> }>
+                        <AccordionItem header={ <AccordionHeader text={projectData.acf.accordion.header_hurdles} /> }>
                             <div dangerouslySetInnerHTML={{__html: projectData.acf.accordion.content_hurdles}}></div>
                         </AccordionItem>
                     </Accordion>
                 </div>
-
                 <div className="cta-container">
                     <NextProjectLink projectsList={projectsList} />
                     <CTAProjectContact />
                 </div>
             </section>
         </>
-    );
+    )
 }
 
 export default Project

@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async'
 import { useState, useEffect } from 'react'
-import { restBase } from '../utilities/Utilities'
-import Loading from '../utilities/Loading'
 import CTAProjectAbout from '../components/CTA-project-about'
+import Loading from '../utilities/Loading'
+import { restBase } from '../utilities/Utilities'
 
 const Contact = () => {
     const [contactData, setContactData] = useState(null)
@@ -41,11 +41,7 @@ const Contact = () => {
                 {contactData.acf.contact_email && contactData.acf.contact_email.map((item, index) => (
                     <li key={index}>
                         <a href={`mailto:${item.social_email}`} className="soc-icon">
-                            <img 
-                                src={item.social_icon.url}
-                                alt={item.social_icon.alt}
-                                width="64" height="64"
-                            />
+                            <img src={item.social_icon.url} alt={item.social_icon.alt}width="64" height="64" />
                             {item.social_email}
                         </a>
                     </li>
@@ -53,11 +49,7 @@ const Contact = () => {
                 {contactData.acf.contact_link && contactData.acf.contact_link.map((item, index) => (
                     <li key={index}>
                         <a href={item.social_link} className="soc-icon">
-                            <img
-                                src={item.social_icon.url} 
-                                alt={item.social_icon.alt}
-                                width="64" height="64"
-                            />
+                            <img src={item.social_icon.url} alt={item.social_icon.alt} width="64" height="64" />
                             {item.link_label}
                         </a>
                     </li>

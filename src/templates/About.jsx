@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async'
 import { useState, useEffect } from 'react'
-import { restBase } from '../utilities/Utilities'
-import Loading from '../utilities/Loading'
 import SkillsList from '../components/Skills-list'
 import CTAProjectContact from '../components/CTA-project-contact'
+import Loading from '../utilities/Loading'
+import { restBase } from '../utilities/Utilities'
 
 const About = () => {
     const [aboutData, setAboutData] = useState(null)
@@ -51,14 +51,8 @@ const About = () => {
                 </figure>
             </section>
             <section className="skills-section">
-                <SkillsList
-                    title="Tech Stack"
-                    skills={aboutData.acf.tech_skills}
-                />
-                <SkillsList
-                    title="Programs & Tools"
-                    skills={aboutData.acf.prog_skills}
-                />
+                <SkillsList title="Tech Stack" skills={aboutData.acf.tech_skills} />
+                <SkillsList title="Programs & Tools" skills={aboutData.acf.prog_skills} />
                 <div className="stack-container">
                     <h2 className="txt-header">Etc Skills</h2>
                     {aboutData.acf.etc_skills.map((skill, index) => (

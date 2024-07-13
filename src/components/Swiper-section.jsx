@@ -1,17 +1,18 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { register } from 'swiper/element/bundle'
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-coverflow'
 
-
-const SwiperSection = ( { images, swiperRef } ) => {
+const SwiperSection = ( { images } ) => {
+    /* Register Swiper custom elements */
+    register()
 
     return (
         <div className="swipe-container">
             <Swiper
-                ref={swiperRef}
                 modules={[Navigation, Pagination, Mousewheel, Keyboard]}
                 slidesPerView={1}
                 spaceBetween={16}

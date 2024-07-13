@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import { restBase } from '../utilities/Utilities'
 import Loading from '../utilities/Loading'
+import { restBase } from '../utilities/Utilities'
 
 const BackgroundPattern = () => {
     const [backgroundData, setBackgroundData] = useState(null)

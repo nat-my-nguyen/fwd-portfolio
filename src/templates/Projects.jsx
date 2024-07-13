@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async'
 import { useState, useEffect } from 'react'
-import { restBase } from '../utilities/Utilities'
-import Loading from '../utilities/Loading'
 import ProjectsList from '../components/Projects-list'
 import CTAAboutContact from '../components/CTA-about-contact'
+import Loading from '../utilities/Loading'
+import { restBase } from '../utilities/Utilities'
 
 const Projects = () => {
     const [projectsData, setProjectsData] = useState(null)
@@ -32,7 +32,7 @@ const Projects = () => {
             setLoadStatus(true)
         }
 
-        fetchData();
+        fetchData()
     }, [])
 
     if ( !isLoaded ) {

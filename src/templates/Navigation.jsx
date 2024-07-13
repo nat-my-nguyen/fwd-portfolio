@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import { restBase } from '../utilities/Utilities'
-import Loading from '../utilities/Loading'
 import { NavLink } from "react-router-dom"
+import Loading from '../utilities/Loading'
+import { restBase } from '../utilities/Utilities'
 
 const Navigation = () => {
     const [navData, setNavData] = useState(null)
@@ -63,45 +63,34 @@ const Navigation = () => {
 
     return (
         <>
-            {/*Logo*/}
             <div className="site-branding logo">
                 <NavLink  to='/' className="site-logo">
                     <span className="visually-hidden">Home</span>
                 </NavLink>
             </div>
-            
-            {/*Navigation with Icons*/}
             <nav className="site-navigation">
                 <ul>
                     <li>
                         <NavLink to='/' className="nav-icon" end>
-                            <img    src={navData.acf.home_icon.url} 
-                                    alt={navData.acf.home_icon.alt}
-                                    width="40" height="40" />
+                            <img src={navData.acf.home_icon.url} alt={navData.acf.home_icon.alt} width="40" height="40" />
                             {getNavigationHeader(8)}
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to='/projects' className="nav-icon">
-                            <img    src={navData.acf.projects_icon.url} 
-                                    alt={navData.acf.projects_icon.alt}
-                                    width="40" height="40" />
+                            <img src={navData.acf.projects_icon.url} alt={navData.acf.projects_icon.alt} width="40" height="40" />
                             {getNavigationHeader(11)}
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to='/about' className="nav-icon">
-                            <img    src={navData.acf.about_icon.url} 
-                                    alt={navData.acf.about_icon.alt}
-                                    width="40" height="40" />
+                            <img src={navData.acf.about_icon.url} alt={navData.acf.about_icon.alt} width="40" height="40" />
                             {getNavigationHeader(13)}
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to='/contact' className="nav-icon">
-                            <img    src={navData.acf.contact_icon.url} 
-                                    alt={navData.acf.contact_icon.alt}
-                                    width="40" height="40" />
+                            <img src={navData.acf.contact_icon.url} alt={navData.acf.contact_icon.alt} width="40" height="40" />
                             {getNavigationHeader(15)}
                         </NavLink>
                     </li>

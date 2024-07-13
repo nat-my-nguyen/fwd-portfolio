@@ -10,6 +10,7 @@ import Navigation from './templates/Navigation'
 import FooterContacts from './templates/Footer-contacts'
 import BackgroundPattern from './templates/Background-pattern'
 import Loading from './utilities/Loading'
+import ScrollToTop from './utilities/Scroll-top'
 import './styles/styles.scss'
 
 function App() {
@@ -24,10 +25,11 @@ function App() {
   }, [])
 
   if (isLoading) {
-    return <Loading />;
+    return <Loading />
   }
   return (
     <HelmetProvider>
+      <ScrollToTop />
       <a href="#main" className="screen-reader-text">Skip to main content</a>
       <BackgroundPattern />
       <header id="masthead" className="site-header">

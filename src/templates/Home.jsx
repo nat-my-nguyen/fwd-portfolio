@@ -1,10 +1,10 @@
 import { Helmet } from 'react-helmet-async'
 import { useState, useEffect } from 'react'
-import { restBase } from '../utilities/Utilities'
-import Loading from '../utilities/Loading'
 import HomeHero from '../sections/Home-hero'
 import FeaturedProjects from '../sections/Home-featured'
 import HomeSkills from '../sections/Home-skills'
+import Loading from '../utilities/Loading'
+import { restBase } from '../utilities/Utilities'
 
 const Home = () => {
     const [homeData, setHomeData] = useState(null)
@@ -33,7 +33,7 @@ const Home = () => {
             setLoadStatus(true)
         }
 
-        fetchData();
+        fetchData()
     }, [])
 
     if ( !isLoaded ) {
