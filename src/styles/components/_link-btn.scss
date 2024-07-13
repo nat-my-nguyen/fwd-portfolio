@@ -31,7 +31,6 @@
 
     .link-btn.dark {
         margin-top: 3rem;
-
         @include stylish-btn-arrow(null, $color_secondary, $color_secondary, $color_primary, $color_accent);
     }
 }

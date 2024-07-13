@@ -8,14 +8,13 @@
     background-color: $color_secondary;
     min-width: 0;
     min-height: 0;
+    @media screen and (min-width: $mq_breakpoint_medium) {
+        width: 80%;
+    } 
 
     .swiper.swiper-initialized {
         padding: 0 1rem 1.5rem;
     }
-
-    @media screen and (min-width: $mq_breakpoint_medium) {
-        width: 80%;
-    } 
 
     .swiper-slide {
         &-next,

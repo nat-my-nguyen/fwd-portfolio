@@ -7,11 +7,9 @@ section {
 
 section.page-intro div {
     margin: 4rem 1rem;
-
     @media screen and (min-width: $mq_breakpoint_medium) {
         margin: 4rem 6rem;
     }
-
     @media screen and (min-width: $mq_breakpoint_large) {
         margin: 4rem 10rem 6rem;
     }

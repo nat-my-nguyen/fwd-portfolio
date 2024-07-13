@@ -6,7 +6,6 @@
     margin: 2rem 1rem;
     /*Ideally would like to use Flexbox but it conflicts
     with SwiperJS and Accordion default stylings*/
-
     @media screen and (min-width: $mq_breakpoint_medium) {
         section.requirement,
         section.col-stacks {

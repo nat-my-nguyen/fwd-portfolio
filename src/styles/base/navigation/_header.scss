@@ -9,7 +9,6 @@
     position: relative;
     z-index: 500;
     width: 100%;
-
     @media screen and (min-width: $mq_breakpoint_large) {
         border-bottom: 0.0625rem solid $color_primary;
         justify-content: space-between;
@@ -20,7 +19,6 @@
 
 .site-branding {
     border-bottom: 0.0625rem solid $color_primary;
-
     @media screen and (min-width: $mq_breakpoint_large) {
         border-bottom: none;
     }
@@ -42,7 +40,6 @@
         justify-content: space-evenly;
         max-width: 18.75rem;
     }
-
     @media screen and (min-width: $mq_breakpoint_large) {
         border-top: none;
         position: static;

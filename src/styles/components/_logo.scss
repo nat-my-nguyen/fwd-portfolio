@@ -7,22 +7,20 @@
     top: 0;
     width: 100%;
     background-color: $color_secondary;
-
-    a {
-        margin: 0 auto;
-        display: block;
-        position: relative;
-
-        @media screen and (min-width: $mq_breakpoint_large) {
-            margin-left: 3rem;
-        }
-    }
-
     @media screen and (min-width: $mq_breakpoint_large) {
         position: static;
         width: auto;
         background-color: transparent;
     }
+
+    a {
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        @media screen and (min-width: $mq_breakpoint_large) {
+            margin-left: 3rem;
+        }
+    } 
 }
 
 .logo a,
@@ -31,7 +29,6 @@
 .site-logo:after {
     width: 2.5rem;
     height: 2.5rem;
-
     @media screen and (min-width: $mq_breakpoint_large) {
         width: 3rem;
         height: 3rem;

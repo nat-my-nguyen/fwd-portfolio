@@ -7,7 +7,6 @@
     img {
         margin: 0 auto;
         width: 1.625rem;
-
         @media screen and (min-width: $mq_breakpoint_large) {
             margin-right: .375rem;
             width: 2.5rem;
@@ -34,7 +33,6 @@
     &:focus img {
         padding: .125rem;
         transform: rotate(-10deg);
-        
         @include icon-hover-effect(22%, $color_accent);
     }
 }

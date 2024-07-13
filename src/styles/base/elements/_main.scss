@@ -2,11 +2,9 @@
 
 main {
     padding-top: 3.25rem; //Match height to top navigation
-
     @media screen and (min-width: $mq_breakpoint_large) {
         padding-top: 4rem;
     }
-
     @media screen and (min-width: $mq_breakpoint_xl) {
         margin: auto;
         width: 68rem;

@@ -7,11 +7,14 @@ body {
 	color: $color_dark;
 	font-family: $font_main;
 	line-height: $font_line-height;
+	@media screen and (min-width: $mq_breakpoint_medium) {
+		line-height: $font_line-height-mq;
+	}
 }
 
 p,
 li {
-	margin: .5rem 0;
+	margin: .5rem 0 1rem;
 	@include responsive-text(.875rem, 1rem);
 }
 
